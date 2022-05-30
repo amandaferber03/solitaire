@@ -17,7 +17,7 @@ void show_commands() {
     std::cout << "\t                and the number of cards identified ('1' for deck, '1' for ace slots," << std::endl;
     std::cout << "\t                and either ['1' - '19'] for origin slots or '1' for destination slots)" << std::endl;
     std::cout << "\t                for both the origin cards and the destination location." << std::endl; 
-    std::cout << "\t'N':            issue new 3-card draw"
+    std::cout << "\t'N':            issue new 3-card draw" << std::endl;
     std::cout << "\tExamples:       Let's say I wanted to move a stack of three cards from slot F to slot B." << std::endl;
     std::cout << "\t                My command would be 'M SF3SB1'. If I wanted to move an available ace of hearts" << std::endl;
     std::cout << "\t                from the deck to the appropriate ace slot, my command would be 'M DD1AH1'." << std::endl;
