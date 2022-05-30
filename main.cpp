@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include <cassert>
-#include "Game.h"
+//#include "Game.h"
 
 void show_commands() {
 	std::cout << "List of commands:" << std::endl;
