@@ -15,4 +15,6 @@ namespace Solitaire
     virtual ~Card(){}
 
     bool is_red() const { return red; }
+
+    bool is_covered() const {return covered; }
 }

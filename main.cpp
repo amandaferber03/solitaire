@@ -10,8 +10,8 @@ void show_commands() {
 	std::cout << "\t'Q':            quit the game" << std::endl;
 	std::cout << "\t'M' <move>:     try to make the specified move" << std::endl;
 	std::cout << "\t                where <move> is a six character string." << std::endl;
-	std::cout << "\t                The first three characters giving the origin position" << std::endl;
-    std::cout << "\t                of a card and the last three giving its destination position." << std::endl;
+	std::cout << "\t                The first three characters give the origin position" << std::endl;
+    std::cout << "\t                of a card and the last three give its destination position." << std::endl;
     std::cout << "\t                Each three character position identifier indicates a" << std::endl;
     std::cout << "\t                location type, location identifier, and a number of cards." << std::endl;
     std::cout << "\t                A location type can be either a 'D' for deck, " << std::endl;
