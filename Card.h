@@ -24,9 +24,9 @@ namespace Solitaire
 
     virtual std::string to_unicode() const = 0;
 
-    virtual std::string get_lower() const = 0;
+    virtual char get_lower() const = 0;
 
-    virtual std::string get_upper() const = 0;
+    virtual char get_upper() const = 0;
 
   protected:
      Card(std::string card_suit) : suit(card_suit) {
