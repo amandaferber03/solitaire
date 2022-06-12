@@ -37,6 +37,9 @@ namespace Solitaire
   private:
 
     Table table;
+  };
+}
+#endif
 
     
     
