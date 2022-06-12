@@ -46,11 +46,14 @@ namespace Solitaire
 
         void change_location(const Position& start, const Position& end, Card* card);
 
-        void add_card(const Position& position, const char& card_designator);
+        void create_deck();
+        
+        void allocate_cards();
 
         void erase_board();
 
         private:
+        std::vector<Card*>deck;
         std::vector<Card*>pile;
         std::map<char, std::vector<Card*>>gen_slots;
         std::map<char, std::vector<Card*>>ace_slots;
