@@ -5,6 +5,6 @@
 
 namespace Solitaire
 {
-  Card* create_card(const char& piece_designator, const std::string& suit_designator);
+  Card* create_card(const char& card_designator, const std::string& suit_designator);
 }
 #endif

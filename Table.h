@@ -48,8 +48,6 @@ namespace Solitaire
 
         void create_deck();
         
-        void allocate_cards();
-
         void erase_board();
 
         private:
