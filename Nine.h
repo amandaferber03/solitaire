@@ -31,6 +31,8 @@ namespace Solitaire
         return"\u1F0D9";
       }
     }
+    private:
+      Nine(std::string card_suit) :  Card(card_suit) {}
   };
 }
 #endif
