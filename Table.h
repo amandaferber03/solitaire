@@ -53,7 +53,7 @@ namespace Solitaire
         void erase_board();
 
         private:
-        std::vector<Card*>deck;
+        std::array<Card*, 52>deck;
         std::vector<Card*>pile;
         std::map<char, std::vector<Card*>>gen_slots;
         std::map<char, std::vector<Card*>>ace_slots;

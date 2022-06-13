@@ -10,7 +10,7 @@
 
 namespace Solitaire
 {
-    void Table::add_cards(const char& card_designator) {
+    void Table::create_deck() {
         
     }
 }
