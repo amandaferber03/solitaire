@@ -4,6 +4,7 @@
 #include <iostream>
 #include <utility>
 #include <map>
+#include <array>
 #include <vector>
 #include "Card.h"
 #include "King.h"

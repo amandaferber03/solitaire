@@ -9,17 +9,17 @@ void show_commands() {
     std::cout << "\t'?':            show this list of options" << std::endl;
     std::cout << "\t'Q':            quit the game" << std::endl;
     std::cout << "\t'M' <move>:     try to make the specified move" << std::endl;
-    std::cout << "\t                where <move> is a four character string." << std::endl;
-    std::cout << "\t                The first three characters give the origin position" << std::endl;
-    std::cout << "\t                of a card and the last three give its destination position." << std::endl;
-    std::cout << "\t                Each two character position identifier indicates a" << std::endl;
+    std::cout << "\t                where <move> is a four token string with no spaces." << std::endl;
+    std::cout << "\t                The first two tokens give the origin position" << std::endl;
+    std::cout << "\t                of a card and the last two tokens give its destination position." << std::endl;
+    std::cout << "\t                Each two-token position identifier indicates a" << std::endl;
     std::cout << "\t                location identifier and a number of cards." << std::endl;
     std::cout << "\t                A location identifier can be a 'P' for leftover pile, " << std::endl;
     std::cout << "\t                a lowercase ['d', 'h', 'c', or 's'] for ace slots (indicating the suit), " << std::endl;
     std::cout << "\t                or an uppercase ['A' - 'G'] for one of the seven table slots, " << std::endl;
     std::cout << "\t                where 'A' is the leftmost slot and 'G' is the rightmost slot. The number of " << std::endl;
-    std::cout << "\t                cards can be a '1' for deck, a '1' for ace slots, " << std::endl;
-    std::cout << "\t                and either a ['1' - '13'] for origin slots or '1' for destination slots." << std::endl;
+    std::cout << "\t                cards can be a 1 for deck, a 1 for ace slots, " << std::endl;
+    std::cout << "\t                and either a [1 - 13] for origin slots or 1 for destination slots." << std::endl;
     std::cout << "\t'N':            issue new 3-card draw" << std::endl;
     std::cout << "\tExamples:       Let's say I wanted to move a stack of three cards from slot F to slot B." << std::endl;
     std::cout << "\t                My command would be 'M F3B1'. If I wanted to move an available ace of hearts" << std::endl;
@@ -45,29 +45,30 @@ int main(int argc, char* argv[]) {
     } else {
       switch (choice[0]) {
       case '?':
-	show_commands();
-	break;
+	      show_commands();
+	      break;
       case 'Q': case 'q':
-	game_end = true;
-	break;
+	      game_end = true;
+	      break;
       case 'M': case 'm': {
-	std::string argument;
-	std::cin >> argument;
-	if (argument.length() != 4) {
-	  std::cerr << "Move specifier must be four characters, but length(" << argument << " ) = " << argument.length() << std::endl;
-	} else {
-	  try{
-	    game.make_move(std::make_pair(argument[0], argument[1]), std::make_pair(argument[2], argument[3]));
-	  }
-	  catch (const std::exception& e) {
-	    std::cerr << "Could not make move: " << e.what() << std::endl;
-	  }
-	}
-	break;
+	      std::stringstream argument;
+        char start1 = '';
+        int start2 = 0;
+        char end1 = '';
+        int end2= 0;
+	      std::cin >> argument;
+        argument >> start1 >> start2 >> end1 >> end2;
+	      try{
+	        game.make_move(std::make_pair(start1, start2), std::make_pair(end1, end2));
+	      }
+	      catch (const std::exception& e) {
+	        std::cerr << "Could not make move: " << e.what() << std::endl;
+	      }
+	    }
+	      break;
       }
       default:
-	std::cerr << "Invalid action '" << choice << "'" << std::endl;
-      }
+	      std::cerr << "Invalid action '" << choice << "'" << std::endl;
     }
   }
   game.erase_board();  

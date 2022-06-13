@@ -3,11 +3,10 @@
 
 #include <utility>
 #include <string>
-#include <tuple>
 
 namespace Solitaire
 {
-  typedef std::tuple<char, char, char> Position;
+  typedef std::pair<char, int> Position;
 
   class Card {
   public:
