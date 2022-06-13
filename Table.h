@@ -48,10 +48,10 @@ namespace Solitaire
 
         void create_deck();
         
-        void erase_board();
+        void erase_table();
 
         private:
-        std::array<Card*, 52>deck;
+        std::array<std::pair<char, std::string>, 52>deck;
         std::vector<Card*>pile;
         std::map<char, std::vector<Card*>>gen_slots;
         std::map<char, std::vector<Card*>>ace_slots;

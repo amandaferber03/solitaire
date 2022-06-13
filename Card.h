@@ -30,7 +30,7 @@ namespace Solitaire
 
   protected:
      Card(std::string card_suit) : suit(card_suit) {
-      covered = false;
+      covered = true;
       if(suit == "hearts" || suit == "diamonds") {
         red = true;
       }
