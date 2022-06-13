@@ -1,0 +1,19 @@
+#include <cstddef>
+#include "CreateCard.h"
+#include "King.h"
+#include "Queen.h"
+#include "Jack.h"
+#include "Ten.h"
+#include "Nine.h"
+#include "Eight.h"
+#include "Seven.h"
+#include "Six.h"
+#include "Five.h"
+#include "Four.h"
+#include "Three.h"
+#include "Two.h"
+#include "Ace.h"
+
+namespace Solitaire
+{
+  
