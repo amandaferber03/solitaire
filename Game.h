@@ -18,15 +18,17 @@ namespace Solitaire
     //A-G, P, d, h, c, s, and the second position identifier is not P
     //A-G: 1-13; P, d, h, c, s: 1
     
-    //last card of destination vector is correct value
-    //last uncovered card of P, d, c, h, s or the first uncovered card from A-G
+    //start: last uncovered card of P, last card of [d, c, h, s] 
+    //or the first uncovered card from A-G
+    //end: last card of [d, c, h, s] or last card of A-G
+    //start's upper should match end's lower
    
-    bool is_valid_order(const Position& start, const Position& end) const;
+    void is_valid_order(const Position& start, const Position& end) const;
     //if the destination vector is empty, is the first (or only) start card a King?
     //are values in the correct order
-    bool is_valid_gen_slot(const Position& start, const Position& end) const;
+    void is_valid_gen_slot(const Position& start, const Position& end) const;
     //alternating color 
-    bool is_valid_ace_slot(const Position& start, const Position& end) const;
+    void is_valid_ace_slot(const Position& start, const Position& end) const;
     //same suit
 
 
@@ -42,7 +44,7 @@ namespace Solitaire
   private:
 
     Table table;
-    std::vector<char> slot_identifiers; 
+    std::vector<char> slot_identifiers;
     std::vector<char> single_card_piles;
     std::vector<int> valid_numbers;
   };

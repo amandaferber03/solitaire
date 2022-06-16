@@ -13,9 +13,9 @@ namespace Solitaire
 
     char to_ascii() const override { return "4"; }
 
-    char get_lower() const override { return "5"; }
+    char get_upper() const override { return "5"; }
 
-    char get_upper() const override { return "3"; }
+    char get_lower() const override { return "3"; }
 
     std::string to_unicode() const override {
       if(suit == "hearts") {

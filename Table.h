@@ -27,15 +27,14 @@ namespace Solitaire
         public:
 
         Table() {
-            gen_slots = { {'A', std::vector<Card*> slot_1},
+            slots = {     {'A', std::vector<Card*> slot_1},
                           {'B', std::vector<Card*> slot_2},
                           {'C', std::vector<Card*> slot_3},
                           {'D', std::vector<Card*> slot_4},
                           {'E', std::vector<Card*> slot_5},
                           {'F', std::vector<Card*> slot_6},
-                          {'G', std::vector<Card*> slot_7}};
-
-            ace_slots = { {'h', std::vector<Card*> slot_hearts},
+                          {'G', std::vector<Card*> slot_7}, 
+                          {'h', std::vector<Card*> slot_hearts},
                           {'d', std::vector<Card*> slot_diamonds},
                           {'c', std::vector<Card*> slot_clubs},
                           {'s', std::vector<Card*> slot_spades}};
@@ -54,8 +53,7 @@ namespace Solitaire
         private:
         std::array<std::pair<char, std::string>, 52>deck;
         std::vector<Card*>pile;
-        std::map<char, std::vector<Card*>>gen_slots;
-        std::map<char, std::vector<Card*>>ace_slots;
+        std::map<char, std::vector<Card*>>slots;
 
     };
 }
