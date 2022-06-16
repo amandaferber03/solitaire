@@ -26,13 +26,8 @@ namespace Solitaire
     void is_valid_order(const Position& start, const Position& end) const;
     //if the destination vector is empty, is the first (or only) start card a King?
     //are values in the correct order
-    void is_valid_gen_slot(const Position& start, const Position& end) const;
-    //alternating color 
-    void is_valid_ace_slot(const Position& start, const Position& end) const;
-    //same suit
 
-
-    bool make_move(const Position& start, const Position& end) const;
+    void make_move(const Position& start, const Position& end) const;
     //uncover if needed 
 
     bool end_of_game() const;
