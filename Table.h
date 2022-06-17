@@ -44,7 +44,7 @@ namespace Solitaire
 
         void display() const;
 
-        void change_location(const Position& start, const Position& end, Card* card);
+        void change_location(const Position& start, const char& end, std::vector<Card*> moving_cards);
 
         void create_deck();
         
