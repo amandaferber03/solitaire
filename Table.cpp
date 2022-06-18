@@ -73,6 +73,19 @@ namespace Solitaire
         }
     }
     void change_location(const Position& start, const char& end, std::vector<Card*> moving_cards) {
-
+        if(start.first == 'P') {
+            int index = 0;
+            for(int i = 0; i < pile.size(); i++) {
+                if( pile[i].is_covered() == false) {
+                    index = i;
+                }
+            }
+            pile.erase(pile.begin() + index);
+        }
+        else {
+            for(int i = 0; i < moving_cards.size(); i++) {
+                slots[]
+            }
+        }
     }
 }

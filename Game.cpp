@@ -12,7 +12,7 @@ namespace Solitaire {
         valid_numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
     }
     
-     void make_move(const Position& start, const char& end) const {
+     void Game::make_move(const Position& start, const char& end) const {
         is_valid_pos();
         is_valid_order();
         std::vector<Card*> moving_cards; 
@@ -38,7 +38,7 @@ namespace Solitaire {
         table.change_location(start, end, moving_cards);
      }
 
-    void is_valid_order(const Position& start, const char& end) const {
+    void Game::is_valid_order(const Position& start, const char& end) const {
         char start_upper = '';
         char end_lower = '';
         int index = -1;
@@ -114,7 +114,7 @@ namespace Solitaire {
             }     
         }
     }
-}
+
     void Game::is_valid_pos(const Position& start, const char& end) const {
         if(std::find(slot_identifiers.begin(), slot_identifiers.end(), start.first) == slot_identifiers.end()) {
             throw Exception("invalid origin location identifier");
