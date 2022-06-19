@@ -129,6 +129,7 @@ namespace Solitaire
             }
         }
         return true;
+    }
 
     void Table::make_move(const Position& start, const char& end) {
         is_valid_pos(start, end);
@@ -208,7 +209,7 @@ namespace Solitaire
                 end_lower = '2';
             }
             else {
-                end_lower = ( slots[end])[size3 - 1].]->get_lower();
+                end_lower = ( slots[end])[size3 - 1]->get_lower();
             }
             if(end_lower != start_upper) {
                 throw Exception("improper order of card values");
@@ -236,3 +237,5 @@ namespace Solitaire
         }
     }
 }
+
+
