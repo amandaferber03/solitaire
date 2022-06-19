@@ -49,7 +49,7 @@ namespace Solitaire {
                     index = i;
                 }
             }
-            moving_cards.push_back(table.pile[index])
+            moving_cards.push_back(table.pile[index]);
         }
         else if (std::find(single_card_piles.begin(), single_card_piles.end(), start.first) != single_card_piles.end() && start.first != 'P') {
             int size = table.slots[start.first].size();
@@ -77,38 +77,38 @@ namespace Solitaire {
         if (std::find(single_card_piles.begin(), single_card_piles.end(), start.first) != single_card_piles.end()) {//in the single card piles
             if (end == 'P') {
                 for(int i = 0; i < table.pile.size(); i++) {
-                    if(table.pile[i].is_covered() == false) {
+                    if(table.pile[i]->is_covered() == false) {
                         index = i;
                     }
                 }
                 if(index == -1) {
                     throw Exception("no cards available to be moved from deck");
                 }
-                start_upper = table.pile[i].get_upper();
-                start_red = table.pile[i].is_red();
-                start_suit = table.pile[i].get_suit();
-                is_king = 'K' == table.pile[i].to_ascii();
+                start_upper = table.pile[index].get_upper();
+                start_red = table.pile[index].is_red();
+                start_suit = table.pile[index].get_suit();
+                is_king = 'K' == table.pile[index].to_ascii();
                 }
             else {
                 int size = table.slots[start.first].size();
                 if(size == 0) {
                     throw Exception("no cards available to be moved from ace slot ");
                 }
-                if((table.slots[start.first])[size - 1].is_covered()) {
+                if((table.slots[start.first])[size - 1]->is_covered()) {
                     throw Exception("cannot move covered card(s)");
                 }
-                start_upper = (table.slots[start.first])[size - 1].get_upper();
-                start_red = (table.slots[start.first])[size - 1].is_red();
-                start_suit = (table.slots[start.first])[size - 1].get_suit();
-                is_king = 'K' == (table.slots[start.first])[size - 1].to_ascii();
+                start_upper = (table.slots[start.first])[size - 1]->get_upper();
+                start_red = (table.slots[start.first])[size - 1]->is_red();
+                start_suit = (table.slots[start.first])[size - 1]->get_suit();
+                is_king = 'K' == (table.slots[start.first])[size - 1]->to_ascii();
             }
         }
         else {//in the general slots
             int size2 = table.slots[start.first].size();
-            start_upper = table.slots[start.first][size2 - start.second].get_upper();
-            start_red = (table.slots[start.first])[size2 - start.second].is_red();
-            start_suit = (table.slots[start.first])[size2 - start.second].get_suit();
-            is_king = 'K' == (table.slots[start.first])[size2 - start.second].to_ascii();
+            start_upper = table.slots[start.first][size2 - start.second]->get_upper();
+            start_red = (table.slots[start.first])[size2 - start.second]->is_red();
+            start_suit = (table.slots[start.first])[size2 - start.second]->get_suit();
+            is_king = 'K' == (table.slots[start.first])[size2 - start.second]->to_ascii();
         }
         if (std::find(single_card_piles.begin(), single_card_piles.end(), end) != single_card_piles.end()) {
             int size3 = table.slots[end].size();
@@ -116,12 +116,12 @@ namespace Solitaire {
                 end_lower = '2';
             }
             else {
-                end_lower = (table.slots[end])[size3 - 1].get_lower();
+                end_lower = (table.slots[end])[size3 - 1].]->get_lower();
             }
             if(end_lower != start_upper) {
                 throw Exception("improper order of card values");
             }
-            if(start_suit != (table.slots[end])[size3 - 1].get_suit()) {
+            if(start_suit != (table.slots[end])[size3 - 1]->get_suit()) {
                 throw Exception("incorrect suit");
             }
         }
@@ -130,8 +130,8 @@ namespace Solitaire {
                 throw Exception("only a King can be placed in an empty slot");
             }
             for(int i = 0; i < table.slots[end].size(); i++) {
-                if(table.slots[end][i].is_covered() == false) {
-                    end_lower = table.slots[end][i].get_lower();  
+                if(table.slots[end][i]->is_covered() == false) {
+                    end_lower = table.slots[end][i]->get_lower();  
                     if(end_lower != start_upper) {
                         throw Exception("improper order of card values");
                     }
