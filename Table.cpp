@@ -4,7 +4,7 @@
 //#include "Terminal.h"
 #include <vector>
 #include "Table.h"
-#include "CreatePiece.h"
+#include "CreateCard.h"
 #include "Exceptions.h"
 #include <string>
 #include <algorithm>    // std::shuffle
