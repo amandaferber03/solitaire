@@ -17,7 +17,7 @@ namespace Solitaire {
         table.erase_table();
     }
     
-    void Game::deal_new_cards() const {
+    void Game::deal_new_cards() {
         int size = table.pile.size();
         int index = 0; 
         while((table.pile[size - index - 1])->is_covered() == false) {
@@ -38,7 +38,7 @@ namespace Solitaire {
         return true;
     }
      
-    void Game::make_move(const Position& start, const char& end) const {
+    void Game::make_move(const Position& start, const char& end) {
         is_valid_pos(start, end);
         is_valid_order(start, end);
         std::vector<Card*> moving_cards; 
