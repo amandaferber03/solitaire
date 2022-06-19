@@ -83,3 +83,4 @@ int main() {
   game.erase_table();  
   return 0; 
 }
+}
