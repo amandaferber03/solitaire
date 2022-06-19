@@ -19,11 +19,11 @@ namespace Solitaire {
     void Game::deal_new_cards() const {
         int size = table.pile.size();
         int index = 0; 
-        while((table.pile[size - index - 1]).is_covered() == false) {
+        while((table.pile[size - index - 1])->is_covered() == false) {
             index++; 
         }
         for(int i = index; i < index + 3; i++) {
-            (table.pile[size - index - 1]).covered = false;
+            (table.pile[size - index - 1])->covered = false;
         }
 
     }
@@ -38,8 +38,8 @@ namespace Solitaire {
     }
      
     void Game::make_move(const Position& start, const char& end) const {
-        is_valid_pos();
-        is_valid_order();
+        this_valid_pos(start, end);
+        is_valid_order(start, end);
         std::vector<Card*> moving_cards; 
         if(start.first == 'P') {
             int index = 0;
