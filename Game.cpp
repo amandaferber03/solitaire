@@ -50,7 +50,7 @@ namespace Solitaire {
             }
         }
         else {
-            if(std::find(valid_numbers.begin(), valid_numbers.end(), start.second) == single_card_piles.end()) {
+            if(std::find(valid_numbers.begin(), valid_numbers.end(), start.second) == valid_numbers.end()) {
                throw Exception("invalid number of cards identified"); 
             }
         }
