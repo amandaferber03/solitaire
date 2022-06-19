@@ -8,6 +8,9 @@
 namespace Solitaire {
     Game::Game() {
         table.create_deck();
+        slot_identifiers = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'P', 'd', 'h', 'c', 's'};
+        single_card_piles = {'P', 'd', 'h', 'c', 's'};
+        valid_numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
     }
 
     void Game::erase_table() {
@@ -19,7 +22,7 @@ namespace Solitaire {
 
     }
     
-    bool Game::is_winner() {
+    void Game::is_winner() {
         table.is_winner();
     }
      
