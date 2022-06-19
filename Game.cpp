@@ -87,7 +87,7 @@ namespace Solitaire {
                 start_upper = table.pile[index]->get_upper();
                 start_red = table.pile[index]->is_red();
                 start_suit = table.pile[index]->get_suit();
-                is_king = 'K' == table.pile[index]->ato_ascii();
+                is_king = 'K' == table.pile[index]->to_ascii();
                 }
             else {
                 int size = table.slots[start.first].size();
@@ -135,7 +135,7 @@ namespace Solitaire {
                     if(end_lower != start_upper) {
                         throw Exception("improper order of card values");
                     }
-                    if(start_color == (table.slots[end])[i].is_red()) {
+                    if(start_red == (table.slots[end])[i]->is_red()) {
                         throw Exception("colors do not alternate");
                     }                  
                     break;

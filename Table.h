@@ -27,28 +27,18 @@ namespace Solitaire
         public:
 
         Table() {
-            std::vector<Card*> slot_1;
-            std::vector<Card*> slot_2;
-            std::vector<Card*> slot_3;
-            std::vector<Card*> slot_4;
-            std::vector<Card*> slot_5;
-            std::vector<Card*> slot_6;
-            std::vector<Card*> slot_7;
-            std::vector<Card*> slot_hearts;
-            std::vector<Card*> slot_diamonds;
-            std::vector<Card*> slot_clubs;
-            std::vector<Card*> slot_spades;
-            slots = {     {'A',  slot_1},
-                          {'B',  slot_2},
-                          {'C',  slot_3},
-                          {'D',  slot_4},
-                          {'E',  slot_5},
-                          {'F',  slot_6},
-                          {'G',  slot_7}, 
-                          {'h',  slot_hearts},
-                          {'d',  slot_diamonds},
-                          {'c',  slot_clubs},
-                          {'s',  slot_spades}};
+            
+            slots = {     {'A',  std::vector<Card*> slot_1},
+                          {'B',  std::vector<Card*> slot_2},
+                          {'C',  std::vector<Card*> slot_3},
+                          {'D',  std::vector<Card*> slot_4},
+                          {'E',  std::vector<Card*> slot_5},
+                          {'F',  std::vector<Card*> slot_6},
+                          {'G',  std::vector<Card*> slot_7}, 
+                          {'h',  std::vector<Card*> slot_hearts},
+                          {'d',  std::vector<Card*> slot_diamonds;},
+                          {'c',  std::vector<Card*> slot_clubs},
+                          {'s',  std::vector<Card*> slot_spades}};
         }
 
         ~Table();
