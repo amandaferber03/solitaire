@@ -60,11 +60,13 @@ int main(int argc, char* argv[]) {
         game.deal_new_cards();
         break;
       case 'M': case 'm': {
+        std::string arg;
+        std::cin >> arg; 
 	      std::stringstream argument;
+        argument << arg;
         char start1;
         int start2 = 0;
         char end1;
-	      std::cin >> argument;
         argument >> start1 >> start2 >> end1;
 	      try{
 	        game.make_move(std::make_pair(start1, start2), end1);
