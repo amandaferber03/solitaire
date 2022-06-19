@@ -31,7 +31,6 @@ namespace Solitaire
 	return"\u1F0DE";
       }
     }
-    private:
       King(std::string card_suit) :  Card(card_suit) {}
   };
 }
