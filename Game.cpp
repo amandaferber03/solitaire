@@ -12,7 +12,20 @@ namespace Solitaire {
         valid_numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
     }
     
-     void Game::make_move(const Position& start, const char& end) const {
+    void Game::deal_new_cards() const {
+        
+    }
+    
+    bool Game::is_winner() const {
+        for(int i = 1; i < 5; i++) {
+            if ((table.slots[single_card_piles[i]]).size() != 13) {
+                return false;
+            }
+        }
+        return true;
+    }
+     
+    void Game::make_move(const Position& start, const char& end) const {
         is_valid_pos();
         is_valid_order();
         std::vector<Card*> moving_cards; 
