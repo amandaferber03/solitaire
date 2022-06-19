@@ -160,7 +160,7 @@ namespace Solitaire
         
      }
 
-    void Table::is_valid_order(const Position& start, const char& end) const {
+    void Table::is_valid_order(const Position& start, const char& end) {
         char start_upper;
         char end_lower;
         int index = -1;
