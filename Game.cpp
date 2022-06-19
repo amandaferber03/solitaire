@@ -27,15 +27,18 @@ namespace Solitaire {
         }
         else if (std::find(single_card_piles.begin(), single_card_piles.end(), start.first) != single_card_piles.end() && start.first != 'P') {
             int size = table.slots[start.first].size();
-            moving_cards.push_back((table.slots[start.first])[size - 1])
+            moving_cards.push_back((table.slots[start.first])[size - 1]);
+            table.change_location(start, end, moving_cards);
         }
         else {
             int size = table.slots[start.first].size();
             for(int i = 0; i < start.second; i++) {
                 moving_cards.push_back((table.slots[start.first])[size - 1 - i]);
             }
+            table.change_location(start, end, moving_cards);
+            (table.slots[start.first])[size - 1].covered = false;
         }
-        table.change_location(start, end, moving_cards);
+        
      }
 
     void Game::is_valid_order(const Position& start, const char& end) const {

@@ -72,7 +72,7 @@ namespace Solitaire
             j++;
         }
     }
-    void change_location(const Position& start, const char& end, std::vector<Card*> moving_cards) {
+    void Table::change_location(const Position& start, const char& end, std::vector<Card*> moving_cards) {
         if(start.first == 'P') {
             int index = 0;
             for(int i = 0; i < pile.size(); i++) {
@@ -84,8 +84,12 @@ namespace Solitaire
         }
         else {
             for(int i = 0; i < moving_cards.size(); i++) {
-                slots[]
+                slots[start.first].pop_back();
             }
         }
+        for(int i = 0; i < moving_cards.size(); i++) {
+            slots[end].push_back(moving_cards[moving_cards.size() - 1 - i]);
+        }
+        
     }
 }
