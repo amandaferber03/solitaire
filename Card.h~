@@ -14,13 +14,13 @@ namespace Solitaire
 
     virtual ~Card(){}
 
-    bool is_red() const { return red; }
+    bool is_red()   { return red; }
 
-    bool is_covered() const { return covered; }
+    bool is_covered()   { return covered; }
 
-    virtual char to_ascii() const = 0;
+    virtual char to_ascii()   = 0;
 
-    virtual std::string to_unicode() const = 0;
+    virtual std::string to_unicode()   = 0;
 
   protected:
   Card(bool is_red, bool is_covered) : red(is_red), covered(is_covered) {}

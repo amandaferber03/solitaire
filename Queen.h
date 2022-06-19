@@ -11,13 +11,13 @@ namespace Solitaire
 
   public:
 
-    char to_ascii() const override { return 'Q'; }
+    char to_ascii()   override { return 'Q'; }
 
-    char get_upper() const override { return 'K'; }
+    char get_upper()   override { return 'K'; }
 
-    char get_lower() const override { return 'J'; }
+    char get_lower()   override { return 'J'; }
 
-    std::string to_unicode() const override {
+    std::string to_unicode()   override {
       if(get_suit() == "hearts") {
         return "\u1F0BD";
       }

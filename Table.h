@@ -30,9 +30,9 @@ namespace Solitaire
 
         ~Table();
 
-        //void display() const;
+        //void display()  ;
 
-        void change_location(const Position& start, const char& end, std::vector<Card*> moving_cards);
+        void change_location(  Position& start,   char& end, std::vector<Card*> moving_cards);
 
         void create_deck();
         

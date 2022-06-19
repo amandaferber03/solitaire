@@ -71,7 +71,7 @@ int main() {
 	      try{
 	        game.make_move(std::make_pair(start1, start2), end1);
 	      }
-	      catch (const std::exception& e) {
+	      catch (  std::exception& e) {
 	        std::cerr << "Could not make move: " << e.what() << std::endl;
 	      }
 	    }

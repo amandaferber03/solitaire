@@ -16,7 +16,7 @@
 
 namespace Solitaire
 {
-  Card* create_card(const char& card_designator, const std::string& suit_designator) {
+  Card* create_card(  char& card_designator,   std::string& suit_designator) {
     switch(piece_designator) {
     case 'K': {
       if(suit_designator == "hearts") {
