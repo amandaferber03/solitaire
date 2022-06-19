@@ -34,6 +34,28 @@ namespace Solitaire
         unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
         std::shuffle(deck.begin(), deck.end(), std::default_random_engine(seed));
         j = 0;
+        std::vector<Card*> slot_1;
+        std::vector<Card*> slot_2;
+        std::vector<Card*> slot_3;
+        std::vector<Card*> slot_4;
+        std::vector<Card*> slot_5;
+        std::vector<Card*> slot_6;
+        std::vector<Card*> slot_7;
+        std::vector<Card*> slot_hearts;
+        std::vector<Card*> slot_diamonds;
+        std::vector<Card*> slot_clubs;
+        std::vector<Card*> slot_spades;
+        slots['A'] = slot_1;
+        slots['B'] = slot_2;
+        slots['C'] = slot_3;
+        slots['D'] = slot_4;
+        slots['E'] = slot_5;
+        slots['F'] = slot_6;
+        slots['6'] = slot_7;
+        slots['h'] = slot_hearts;
+        slots['d'] = slot_diamonds;
+        slots['c'] = slot_clubs;
+        slots['s'] = slot_spades;
         slots['A'].push_back(create_card(deck[j].first, deck[j].second));
         j++;
         (slots['A'])[0]->change_covered();
@@ -90,6 +112,7 @@ namespace Solitaire
         for(int i = 0; i < moving_cards.size(); i++) {
             slots[end].push_back(moving_cards[moving_cards.size() - 1 - i]);
         }
+
         
     }
 
