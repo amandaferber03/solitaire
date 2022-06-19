@@ -228,21 +228,25 @@ namespace Solitaire
                 switch(end) {
                     case 'd': {
                         if(start_suit != "diamonds") {
+                            std::cout << start_suit << std::endl;
                             throw Exception("incorrect suit");
                         }
                     }
                     case 'h' : {
                         if(start_suit != "hearts") {
+                            std::cout << start_suit << std::endl;
                             throw Exception("incorrect suit");
                         }
                     }
                     case 'c': {
                         if(start_suit != "clubs") {
+                            std::cout << start_suit << std::endl;
                             throw Exception("incorrect suit");
                         }
                     }
                     case 's': {
                         if(start_suit != "spades") {
+                            std::cout << start_suit << std::endl;
                             throw Exception("incorrect suit");
                         }
                     }
