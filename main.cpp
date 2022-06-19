@@ -35,7 +35,12 @@ int main(int argc, char* argv[]) {
   bool game_end = false;
 
   while(!game_end) {
-    game.display();
+    
+    if(game.is_winner()) {
+      std::cout << "congratulations! you're a winner" << std::endl;
+      game_end = true;
+      break;
+    }
 
     std::string choice;
     std::cout << "Next command: ";
@@ -74,6 +79,6 @@ int main(int argc, char* argv[]) {
 	      std::cerr << "Invalid action '" << choice << "'" << std::endl;
     }
   }
-  game.erase_board();  
+  game.erase_table();  
   return 0; 
 }

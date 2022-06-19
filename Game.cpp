@@ -11,9 +11,21 @@ namespace Solitaire {
         single_card_piles = {'P', 'd', 'h', 'c', 's'}
         valid_numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
     }
+
+    void Game::erase_table() {
+        table.erase_table();
+    }
     
     void Game::deal_new_cards() const {
-        
+        int size = table.pile.size();
+        int index = 0; 
+        while((table.pile[size - index - 1]).is_covered() == false) {
+            index++; 
+        }
+        for(int i = index; i < index + 3; i++) {
+            (table.pile[size - index - 1]).covered = false;
+        }
+
     }
     
     bool Game::is_winner() const {

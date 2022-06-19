@@ -92,4 +92,20 @@ namespace Solitaire
         }
         
     }
+
+    void Table::erase_table() {
+        for(int i = 0; i < pile.size(); i++) {
+            delete pile[i];
+        }
+
+        for(std::map<char, std::vector<Card*>>::iterator it = slots.begin();
+            it != slots.end();
+            it++) {
+                for(std::vector<Card*>::iterator it_vec = (it->second).begin(); 
+                    it_vec != (it->second).end();
+                    it_vec++) {
+                        delete it_vec;
+                }
+        }
+    }
 }
