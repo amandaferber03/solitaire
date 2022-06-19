@@ -55,6 +55,9 @@ namespace Solitaire
         std::array<std::pair<char, std::string>, 52>deck;
         std::vector<Card*>pile;
         std::map<char, std::vector<Card*>>slots;
+        std::vector<char> slot_identifiers;
+        std::vector<char> single_card_piles;
+        std::vector<int> valid_numbers;
 
 
     };

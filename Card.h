@@ -17,7 +17,7 @@ namespace Solitaire
 
     void change_covered() { covered = !covered; }
 
-    std::string get_suit() { return suit; }
+    std::string get_suit() const { return suit; }
     
     bool is_red() { return red;}
 
@@ -40,6 +40,7 @@ namespace Solitaire
         red = false;
       }
     }
+  
   private:
     bool red;
     bool covered;
