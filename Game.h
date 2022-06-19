@@ -10,7 +10,11 @@ namespace Solitaire
 {
   class Game {
   public:
-    Game();
+    Game() {
+            slot_identifiers = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'P', 'd', 'h', 'c', 's'};
+            single_card_piles = {'P', 'd', 'h', 'c', 's'};
+            valid_numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+    }
 
     //void display() const { table.display(); }
 
@@ -38,6 +42,9 @@ namespace Solitaire
 
   private:
     Table table;
+    std::vector<char> slot_identifiers;
+    std::vector<char> single_card_piles;
+    std::vector<int> valid_numbers;
   };
 }
 #endif
