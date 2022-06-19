@@ -21,10 +21,10 @@ namespace Solitaire
       if(get_suit() == "hearts") {
 	return "\u1F0BE";
       }
-      else if (suit == "diamonds") {
+      else if (get_suit() == "diamonds") {
 	return "\u1F0CE";
       }
-      else if (suit == "clubs") {
+      else if (get_suit() == "clubs") {
 	return "\u1F0AE";
       }
       else {
