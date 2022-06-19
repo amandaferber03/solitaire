@@ -34,7 +34,7 @@ namespace Solitaire
 
     void deal_new_cards();
 
-    void is_winner();
+    bool is_winner();
 
   private:
     Table table;

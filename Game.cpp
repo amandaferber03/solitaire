@@ -22,8 +22,8 @@ namespace Solitaire {
 
     }
     
-    void Game::is_winner() {
-        table.is_winner();
+    bool Game::is_winner() {
+        return table.is_winner();
     }
      
     void Game::make_move(const Position& start, const char& end) {
