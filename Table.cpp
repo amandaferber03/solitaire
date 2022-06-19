@@ -36,37 +36,37 @@ namespace Solitaire
         j = 0;
         slots['A'].push_back(create_card(deck[j].first, deck[j].second));
         j++;
-        (slots['A'])[0]->covered = false;
+        (slots['A'])[0]->is_covered = false;
         for(int i = 0; i < 2; i++) {
             slots['B'].push_back(create_card(deck[j].first, deck[j].second));
             j++;
         }
-        (slots['B'])[1]->covered = false;
+        (slots['B'])[1]->is_covered = false;
         for(int i = 0; i < 3; i++) {
             slots['C'].push_back(create_card(deck[j].first, deck[j].second));
             j++;
         }
-        (slots['C'])[2]->covered = false;
+        (slots['C'])[2]->is_covered = false;
         for(int i = 0; i < 4; i++) {
             slots['D'].push_back(create_card(deck[j].first, deck[j].second));
             j++;
         }
-        (slots['D'])[3]->covered = false;    
+        (slots['D'])[3]->is_covered = false;    
         for(int i = 0; i < 5; i++) {
             slots['E'].push_back(create_card(deck[j].first, deck[j].second));
             j++;
         }
-        (slots['E'])[4]->covered = false;
+        (slots['E'])[4]->is_covered = false;
         for(int i = 0; i < 6; i++) {
             slots['F'].push_back(create_card(deck[j].first, deck[j].second));
             j++;
         }
-        (slots['F'])[5]->covered = false;
+        (slots['F'])[5]->is_covered = false;
         for(int i = 0; i < 7; i++) {
             slots['G'].push_back(create_card(deck[j].first, deck[j].second));
             j++;
         }
-        (slots['G'])[6]->covered = false;
+        (slots['G'])[6]->is_covered = false;
         for(int i = 0; i < 24; i++) {
             pile.push_back(create_card(deck[j].first, deck[j].second));
             j++;
