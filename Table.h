@@ -46,7 +46,7 @@ namespace Solitaire
 
         bool is_winner() const;
 
-        void make_move(const Position& start, const char& end);
+        void make_move(const Position& start, const char& end) const;
 
         void is_valid_order(const Position& start, const char& end) const;
         
