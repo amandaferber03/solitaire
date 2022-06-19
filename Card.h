@@ -37,9 +37,7 @@ namespace Solitaire
         red = false;
       }
      }
-  
-  private:
-    
+
     bool red;
     bool covered;
     std::string suit;
