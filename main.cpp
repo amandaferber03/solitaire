@@ -34,7 +34,7 @@ int main() {
   show_commands();
   bool game_end = false;
 
-  while(!game_end) {
+  while(game_end == false) {
     
     //if(game.is_winner()) {
       //std::cout << "congratulations! you're a winner" << std::endl;
