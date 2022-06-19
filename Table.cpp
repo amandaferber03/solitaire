@@ -132,7 +132,7 @@ namespace Solitaire
     }
 
     void Table::make_move(const Position& start, const char& end) {
-        is_valid_pos(start, end);
+        is_valid_order(start, end);
         std::vector<Card*> moving_cards; 
         if(start.first == 'P') {
             int index = 0;

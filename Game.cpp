@@ -24,7 +24,7 @@ namespace Solitaire {
     }
      
     void Game::make_move(const Position& start, const char& end) {
-        is_valid_order(start, end);
+        is_valid_pos(start, end);
         table.make_move();
      }
 
