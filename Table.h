@@ -32,8 +32,6 @@ namespace Solitaire
             valid_numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
         }
 
-        ~Table();
-
         //void display() const;
 
         void change_location(const Position& start, const char& end, std::vector<Card*> moving_cards);
