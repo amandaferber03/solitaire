@@ -61,9 +61,9 @@ int main(int argc, char* argv[]) {
         break;
       case 'M': case 'm': {
 	      std::stringstream argument;
-        char start1 = '';
+        char start1;
         int start2 = 0;
-        char end1 = '';
+        char end1;
 	      std::cin >> argument;
         argument >> start1 >> start2 >> end1;
 	      try{

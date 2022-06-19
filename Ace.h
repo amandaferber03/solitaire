@@ -11,11 +11,11 @@ namespace Solitaire
 
   public:
 
-    char to_ascii() const override { return "A"; }
+    char to_ascii() const override { return 'A'; }
 
-    char get_upper() const override { return "2"; }
+    char get_upper() const override { return '2'; }
 
-    char get_lower() const override { return "?"; }
+    char get_lower() const override { return '?'; }
 
     std::string to_unicode() const override {
       if(suit == "hearts") {
