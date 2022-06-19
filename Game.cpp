@@ -84,10 +84,10 @@ namespace Solitaire {
                 if(index == -1) {
                     throw Exception("no cards available to be moved from deck");
                 }
-                start_upper = table.pile[index].get_upper();
-                start_red = table.pile[index].is_red();
-                start_suit = table.pile[index].get_suit();
-                is_king = 'K' == table.pile[index].to_ascii();
+                start_upper = table.pile[index]->get_upper();
+                start_red = table.pile[index]->is_red();
+                start_suit = table.pile[index]->get_suit();
+                is_king = 'K' == table.pile[index]->ato_ascii();
                 }
             else {
                 int size = table.slots[start.first].size();
