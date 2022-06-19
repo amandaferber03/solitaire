@@ -25,11 +25,11 @@ namespace Solitaire {
      
     void Game::make_move(const Position& start, const char& end) {
         is_valid_pos(start, end);
-        table.make_move();
+        table.make_move(start, end);
      }
 
     void Game::is_valid_order(const Position& start, const char& end) {
-        table.is_valid_order();
+        table.is_valid_order(start, end);
     }
 
     void Game::is_valid_pos(const Position& start, const char& end) const {
