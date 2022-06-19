@@ -7,8 +7,8 @@
 namespace Solitaire {
     Game::Game() {
         table.create_deck();
-        pile_identifiers = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'P', 'd', 'h', 'c', 's'};
-        single_card_piles = {'P', 'd', 'h', 'c', 's'}
+        slot_identifiers = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'P', 'd', 'h', 'c', 's'};
+        single_card_piles = {'P', 'd', 'h', 'c', 's'};
         valid_numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
     }
 
@@ -67,8 +67,8 @@ namespace Solitaire {
      }
 
     void Game::is_valid_order(const Position& start, const char& end) const {
-        char start_upper = '';
-        char end_lower = '';
+        char start_upper;
+        char end_lower;
         int index = -1;
         bool start_red;
         std::string start_suit;
