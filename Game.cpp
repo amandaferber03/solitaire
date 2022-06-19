@@ -38,7 +38,7 @@ namespace Solitaire {
     }
      
     void Game::make_move(const Position& start, const char& end) const {
-        this_valid_pos(start, end);
+        is_valid_pos(start, end);
         is_valid_order(start, end);
         std::vector<Card*> moving_cards; 
         if(start.first == 'P') {
