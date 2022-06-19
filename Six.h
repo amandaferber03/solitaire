@@ -7,7 +7,7 @@
 
 namespace Solitaire
 {
-  class SIX : public Card {
+  class Six : public Card {
 
   public:
 
