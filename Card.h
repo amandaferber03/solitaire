@@ -21,13 +21,13 @@ namespace Solitaire
     
     bool is_red() { return red;}
 
-    virtual char to_ascii()   = 0;
+    virtual char to_ascii() const = 0;
 
-    virtual std::string to_unicode()   = 0;
+    virtual std::string to_unicode() const = 0;
 
-    virtual char get_lower()   = 0;
+    virtual char get_lower() const = 0;
 
-    virtual char get_upper()   = 0;
+    virtual char get_upper() const = 0;
 
 
   protected:

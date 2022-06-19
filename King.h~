@@ -11,11 +11,11 @@ namespace Solitaire
 
   public:
 
-    char to_ascii()   override { return "K"; }
+    char to_ascii() const override { return "K"; }
 
-    char get_lower()   override { return "?"; }
+    char get_lower() const override { return "?"; }
 
-    char get_upper()   override { return "Q"; }
+    char get_upper() const override { return "Q"; }
   };
 }
 #endif

@@ -13,8 +13,8 @@ namespace Solitaire {
 		std::string _message;
 	public:
 		Exception( void ) : _message( "" ) {}
-		Exception(   std::string &message ) : _message( message ) {}
-		  char *what( void )   noexcept { return _message.c_str(); }
+		Exception( const std::string &message ) : _message( message ) {}
+		const char *what( void ) const noexcept { return _message.c_str(); }
 	};
 }
 #endif

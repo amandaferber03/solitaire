@@ -29,7 +29,7 @@ namespace Solitaire {
 
     }
     
-    bool Game::is_winner()   {
+    bool Game::is_winner() const {
         for(int i = 1; i < 5; i++) {
             if ((table.slots[single_card_piles[i]]).size() != 13) {
                 return false;
@@ -38,7 +38,7 @@ namespace Solitaire {
         return true;
     }
      
-    void Game::make_move(  Position& start,   char& end) {
+    void Game::make_move(const Position& start, const char& end) {
         is_valid_pos(start, end);
         is_valid_order(start, end);
         std::vector<Card*> moving_cards; 
@@ -67,7 +67,7 @@ namespace Solitaire {
         
      }
 
-    void Game::is_valid_order(  Position& start,   char& end)   {
+    void Game::is_valid_order(const Position& start, const char& end) const {
         char start_upper;
         char end_lower;
         int index = -1;
@@ -144,7 +144,7 @@ namespace Solitaire {
         }
     }
 
-    void Game::is_valid_pos(  Position& start,   char& end)   {
+    void Game::is_valid_pos(const Position& start, const char& end) const {
         if(std::find(slot_identifiers.begin(), slot_identifiers.end(), start.first) == slot_identifiers.end()) {
             throw Exception("invalid origin location identifier");
         }
