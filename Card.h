@@ -15,7 +15,7 @@ namespace Solitaire
 
     bool is_covered() const { return covered; }
 
-    bool change_covered() { covered = !covered; }
+    void change_covered() { covered = !covered; }
 
     std::string get_suit() const { return suit; }
     
