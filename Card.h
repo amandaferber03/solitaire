@@ -13,13 +13,13 @@ namespace Solitaire
 
     virtual ~Card(){}
 
-    bool is_covered() const { return covered; }
+    bool is_covered()  { return covered; }
 
     void change_covered() { covered = !covered; }
 
-    std::string get_suit() const { return suit; }
+    std::string get_suit() { return suit; }
     
-    bool is_red() const { return red;}
+    bool is_red() { return red;}
 
     virtual char to_ascii() const = 0;
 
