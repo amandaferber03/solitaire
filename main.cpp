@@ -36,11 +36,11 @@ int main() {
 
   while(!game_end) {
     
-    if(game.is_winner()) {
-      std::cout << "congratulations! you're a winner" << std::endl;
-      game_end = true;
-      break;
-    }
+    //if(game.is_winner()) {
+      //std::cout << "congratulations! you're a winner" << std::endl;
+      //game_end = true;
+      //break;
+    //}
 
     std::string choice;
     std::cout << "Next command: ";
