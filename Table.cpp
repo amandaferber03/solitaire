@@ -76,7 +76,7 @@ namespace Solitaire
         if(start.first == 'P') {
             int index = 0;
             for(int i = 0; i < pile.size(); i++) {
-                if( pile[i].is_covered() == false) {
+                if( pile[i]->is_covered() == false) {
                     index = i;
                 }
             }
@@ -104,7 +104,7 @@ namespace Solitaire
                 for(std::vector<Card*>::iterator it_vec = (it->second).begin(); 
                     it_vec != (it->second).end();
                     it_vec++) {
-                        delete it_vec;
+                        delete *it_vec;
                 }
         }
     }
