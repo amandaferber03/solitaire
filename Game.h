@@ -37,11 +37,7 @@ namespace Solitaire
     bool is_winner() const;
 
   private:
-
     Table table;
-    std::vector<char> slot_identifiers;
-    std::vector<char> single_card_piles;
-    std::vector<int> valid_numbers;
   };
 }
 #endif

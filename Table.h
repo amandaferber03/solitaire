@@ -26,7 +26,11 @@ namespace Solitaire
     class Table {
         public:
 
-        Table() {}
+        Table() {
+            slot_identifiers = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'P', 'd', 'h', 'c', 's'};
+            single_card_piles = {'P', 'd', 'h', 'c', 's'};
+            valid_numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+        }
 
         ~Table();
 
@@ -38,10 +42,20 @@ namespace Solitaire
         
         void erase_table();
 
+        void deal_new_cards();
+
+        bool is_winner() const;
+
+        void make_move(const Position& start, const char& end);
+
+        void is_valid_order(const Position& start, const char& end) const;
+        
+        private:
         
         std::array<std::pair<char, std::string>, 52>deck;
         std::vector<Card*>pile;
         std::map<char, std::vector<Card*>>slots;
+
 
     };
 }
