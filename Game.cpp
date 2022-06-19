@@ -74,7 +74,7 @@ namespace Solitaire {
         std::string start_suit;
         bool is_king = false ;
         if (std::find(single_card_piles.begin(), single_card_piles.end(), start.first) != single_card_piles.end()) {//in the single card piles
-            if (end.first == 'P') {
+            if (end == 'P') {
                 for(int i = 0; i < table.pile.size(); i++) {
                     if(table.pile[i].is_covered() == false) {
                         index = i;
@@ -109,32 +109,32 @@ namespace Solitaire {
             start_suit = (table.slots[start.first])[size2 - start.second].get_suit();
             is_king = 'K' == (table.slots[start.first])[size2 - start.second].to_ascii();
         }
-        if (std::find(single_card_piles.begin(), single_card_piles.end(), end.first) != single_card_piles.end()) {
-            int size3 = table.slots[end.first].size();
+        if (std::find(single_card_piles.begin(), single_card_piles.end(), end) != single_card_piles.end()) {
+            int size3 = table.slots[end].size();
             if(size3 == 0) {
                 end_lower = '2';
             }
             else {
-                end_lower = (table.slots[end.first])[size3 - 1].get_lower();
+                end_lower = (table.slots[end])[size3 - 1].get_lower();
             }
             if(end_lower != start_upper) {
                 throw Exception("improper order of card values");
             }
-            if(start_suit != (table.slots[end.first])[size3 - 1].get_suit()) {
+            if(start_suit != (table.slots[end])[size3 - 1].get_suit()) {
                 throw Exception("incorrect suit");
             }
         }
         else {
-            if(!is_king && table.slots[end.first].size() == 0) {
+            if(!is_king && table.slots[end].size() == 0) {
                 throw Exception("only a King can be placed in an empty slot");
             }
-            for(int i = 0; i < table.slots[end.first].size(); i++) {
-                if(table.slots[end.first][i].is_covered() == false) {
-                    end_lower = table.slots[end.first][i].get_lower();  
+            for(int i = 0; i < table.slots[end].size(); i++) {
+                if(table.slots[end][i].is_covered() == false) {
+                    end_lower = table.slots[end][i].get_lower();  
                     if(end_lower != start_upper) {
                         throw Exception("improper order of card values");
                     }
-                    if(start_color == (table.slots[end.first])[i].is_red()) {
+                    if(start_color == (table.slots[end])[i].is_red()) {
                         throw Exception("colors do not alternate");
                     }                  
                     break;
@@ -148,7 +148,7 @@ namespace Solitaire {
             throw Exception("invalid origin location identifier");
         }
 
-        if((end.first == 'P') || (std::find(slot_identifiers.begin(), slot_identifiers.end(), end.first) == slot_identifiers.end())) {
+        if((end == 'P') || (std::find(slot_identifiers.begin(), slot_identifiers.end(), end) == slot_identifiers.end())) {
             throw Exception("invalid destination location identifier");
         }
 
@@ -161,9 +161,6 @@ namespace Solitaire {
             if(std::find(valid_numbers.begin(), valid_numbers.end(), start.second) == single_card_piles.end()) {
                throw Exception("invalid number of cards identified"); 
             }
-        }
-        if(end.second != 1) {
-            throw Exception("invalid number of cards identified");
         }
     }
 }
