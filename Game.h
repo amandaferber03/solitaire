@@ -27,12 +27,12 @@ namespace Solitaire
     //if the destination vector is empty, is the first (or only) start card a King?
     //are values in the correct order
 
-    void make_move(const Position& start, const char& end) const;
+    void make_move(const Position& start, const char& end);
     //uncover if needed 
 
     void erase_table();
 
-    void deal_new_cards() const;
+    void deal_new_cards();
 
     bool is_winner() const;
 
