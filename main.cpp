@@ -29,7 +29,7 @@ void show_commands() {
     std::cout << "\t                would be 'M P1C'. Good luck!" << std::endl; 
 }
 
-int main(int argc, char* argv[]) {
+int main() {
   Solitaire::Game game;
   show_commands();
   bool game_end = false;
@@ -76,7 +76,6 @@ int main(int argc, char* argv[]) {
 	      }
 	    }
 	      break;
-      }
       default:
 	      std::cerr << "Invalid action '" << choice << "'" << std::endl;
     }
