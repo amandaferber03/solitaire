@@ -31,7 +31,6 @@ namespace Solitaire
         return"\u1F0D4";
       }
     }
-    private:
       Four(std::string card_suit) :  Card(card_suit) {}
   };
 }

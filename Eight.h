@@ -31,7 +31,6 @@ namespace Solitaire
         return"\u1F0D8";
       }
     }
-    private:
       Eight(std::string card_suit) :  Card(card_suit) {}
   };
 }

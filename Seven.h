@@ -31,7 +31,6 @@ namespace Solitaire
         return"\u1F0D7";
       }
     }
-    private:
       Seven(std::string card_suit) :  Card(card_suit) {}
   };
 }

@@ -31,7 +31,6 @@ namespace Solitaire
         return"\u1F0DB";
       }
     }
-    private:
       Jack(std::string card_suit) :  Card(card_suit) {}
   };
 }
