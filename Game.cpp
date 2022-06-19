@@ -23,7 +23,7 @@ namespace Solitaire {
             index++; 
         }
         for(int i = index; i < index + 3; i++) {
-            (table.pile[size - index - 1])->covered = false;
+            (table.pile[size - index - 1])->is_covered() = false;
         }
 
     }
@@ -44,7 +44,7 @@ namespace Solitaire {
         if(start.first == 'P') {
             int index = 0;
             for(int i = 0; i < table.pile.size(); i++) {
-                if(table.pile[i].covered() == false) {
+                if(table.pile[i].is_covered() == false) {
                     index = i;
                 }
             }
@@ -61,7 +61,7 @@ namespace Solitaire {
                 moving_cards.push_back((table.slots[start.first])[size - 1 - i]);
             }
             table.change_location(start, end, moving_cards);
-            (table.slots[start.first])[size - 1].covered = false;
+            (table.slots[start.first])[size - 1].is_covered() = false;
         }
         
      }
@@ -76,7 +76,7 @@ namespace Solitaire {
         if (std::find(single_card_piles.begin(), single_card_piles.end(), start.first) != single_card_piles.end()) {//in the single card piles
             if (end.first == 'P') {
                 for(int i = 0; i < table.pile.size(); i++) {
-                    if(table.pile[i].covered() == false) {
+                    if(table.pile[i].is_covered() == false) {
                         index = i;
                     }
                 }
@@ -129,7 +129,7 @@ namespace Solitaire {
                 throw Exception("only a King can be placed in an empty slot");
             }
             for(int i = 0; i < table.slots[end.first].size(); i++) {
-                if(table.slots[end.first][i].covered() == false) {
+                if(table.slots[end.first][i].is_covered() == false) {
                     end_lower = table.slots[end.first][i].get_lower();  
                     if(end_lower != start_upper) {
                         throw Exception("improper order of card values");

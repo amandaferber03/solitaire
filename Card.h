@@ -27,12 +27,9 @@ namespace Solitaire
 
     virtual char get_upper() const = 0;
 
-    bool red;
-    bool covered;
-    std::string suit;
 
   protected:
-     Card(std::string card_suit) : suit(card_suit) {
+    Card(std::string card_suit) : suit(card_suit) {
       covered = true;
       if(suit == "hearts" || suit == "diamonds") {
         red = true;
@@ -40,7 +37,11 @@ namespace Solitaire
       else {
         red = false;
       }
-     }
+    }
+  private:
+    bool red;
+    bool covered;
+    std::string suit;
 
   };
 }
