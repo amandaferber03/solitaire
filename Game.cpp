@@ -32,7 +32,7 @@ namespace Solitaire {
         table.is_valid_order(start, end);
     }
 
-    void Game::is_valid_pos(const Position& start, const char& end) const {
+    void Game::is_valid_pos(const Position& start, const char& end) {
         if(std::find(slot_identifiers.begin(), slot_identifiers.end(), start.first) == slot_identifiers.end()) {
             throw Exception("invalid origin location identifier");
         }
