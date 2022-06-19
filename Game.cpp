@@ -23,7 +23,7 @@ namespace Solitaire {
             index++; 
         }
         for(int i = index; i < index + 3; i++) {
-            (table.pile[size - index - 1])->is_covered() = false;
+            (table.pile[size - index - 1])->change_covered();
         }
 
     }
@@ -61,7 +61,7 @@ namespace Solitaire {
                 moving_cards.push_back((table.slots[start.first])[size - 1 - i]);
             }
             table.change_location(start, end, moving_cards);
-            (table.slots[start.first])[size - 1].is_covered() = false;
+            (table.slots[start.first])[size - 1].change_covered();
         }
         
      }
