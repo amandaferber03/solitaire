@@ -3,6 +3,7 @@
 #include <string>
 #include <cctype> 
 #include <iostream>
+#include <algorithm>
 
 namespace Solitaire {
     Game::Game() {
@@ -44,11 +45,11 @@ namespace Solitaire {
         if(start.first == 'P') {
             int index = 0;
             for(int i = 0; i < table.pile.size(); i++) {
-                if(table.pile[i].is_covered() == false) {
+                if(table.pile[i]->is_covered() == false) {
                     index = i;
                 }
             }
-            moving_cards.push_back(pile[index])
+            moving_cards.push_back(table.pile[index])
         }
         else if (std::find(single_card_piles.begin(), single_card_piles.end(), start.first) != single_card_piles.end() && start.first != 'P') {
             int size = table.slots[start.first].size();
@@ -61,7 +62,7 @@ namespace Solitaire {
                 moving_cards.push_back((table.slots[start.first])[size - 1 - i]);
             }
             table.change_location(start, end, moving_cards);
-            (table.slots[start.first])[size - 1].change_covered();
+            (table.slots[start.first])[size - 1]->change_covered();
         }
         
      }
