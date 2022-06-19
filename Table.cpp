@@ -221,8 +221,32 @@ namespace Solitaire
             if(end_lower != start_upper) {
                 throw Exception("improper order of card values");
             }
-            if(start_suit != ( slots[end])[size3 - 1]->get_suit()) {
+            if(size3 > 0 && start_suit != ( slots[end])[size3 - 1]->get_suit()) {
                 throw Exception("incorrect suit");
+            }
+            else if(size3 == 0) {
+                switch(end) {
+                    case 'd': {
+                        if(start_suit != "diamonds") {
+                            throw Exception("incorrect suit");
+                        }
+                    }
+                    case 'h' : {
+                        if(start_suit != "hearts") {
+                            throw Exception("incorrect suit");
+                        }
+                    }
+                    case 'c': {
+                        if(start_suit != "clubs") {
+                            throw Exception("incorrect suit");
+                        }
+                    }
+                    case 's': {
+                        if(start_suit != "spades") {
+                            throw Exception("incorrect suit");
+                        }
+                    }
+                }
             }
         }
         else {
