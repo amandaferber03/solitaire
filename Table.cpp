@@ -122,7 +122,7 @@ namespace Solitaire
 
     }
     
-    bool Table::is_winner() const {
+    bool Table::is_winner() {
         for(int i = 1; i < 5; i++) {
             if ((slots[single_card_piles[i]]).size() != 13) {
                 return false;

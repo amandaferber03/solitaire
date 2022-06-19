@@ -44,7 +44,7 @@ namespace Solitaire
 
         void deal_new_cards();
 
-        bool is_winner() const;
+        bool is_winner();
 
         void make_move(const Position& start, const char& end) const;
 
