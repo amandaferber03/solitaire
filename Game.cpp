@@ -19,7 +19,7 @@ namespace Solitaire {
 
     }
     
-    bool Game::is_winner() const {
+    bool Game::is_winner() {
         table.is_winner();
     }
      
@@ -28,7 +28,7 @@ namespace Solitaire {
         table.make_move();
      }
 
-    void Game::is_valid_order(const Position& start, const char& end) const {
+    void Game::is_valid_order(const Position& start, const char& end) {
         table.is_valid_order();
     }
 
