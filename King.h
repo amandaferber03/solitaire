@@ -18,7 +18,7 @@ namespace Solitaire
     char get_lower() const override { return 'Q'; }
 
     std::string to_unicode() const override {
-      if(suit == "hearts") {
+      if(get_suit() == "hearts") {
 	return "\u1F0BE";
       }
       else if (suit == "diamonds") {
