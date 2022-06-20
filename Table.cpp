@@ -186,6 +186,31 @@ namespace Solitaire
                 std::cout << "G: " << slots['G'][i]->to_ascii() << slots['G'][i]->get_suit() << std::endl;
             }
         }
+        for(int i = 0; i < slots['h'].size(); i++){
+            if(slots['h'][i]->is_covered() == false) {
+                std::cout << "h: " << slots['h'][i]->to_ascii() << slots['h'][i]->get_suit() << std::endl;
+            }
+        }
+        for(int i = 0; i < slots['d'].size(); i++){
+            if(slots['d'][i]->is_covered() == false) {
+                std::cout << "d: " << slots['d'][i]->to_ascii() << slots['d'][i]->get_suit() << std::endl;
+            }
+        }
+        for(int i = 0; i < slots['c'].size(); i++){
+            if(slots['c'][i]->is_covered() == false) {
+                std::cout << "c: " << slots['c'][i]->to_ascii() << slots['c'][i]->get_suit() << std::endl;
+            }
+        }
+        for(int i = 0; i < slots['s'].size(); i++){
+            if(slots['s'][i]->is_covered() == false) {
+                std::cout << "s: " << slots['s'][i]->to_ascii() << slots['s'][i]->get_suit() << std::endl;
+            }
+        }
+        for(int i = 0; i < pile.size(); i++) {
+            if(pile[i]->is_covered() == false) {
+               std::cout << "Pile: " << pile[i]->to_ascii() << pile[i]->get_suit() << std::endl;
+            }
+        }
     }
 
     void Table::make_move(const Position& start, const char& end) {
