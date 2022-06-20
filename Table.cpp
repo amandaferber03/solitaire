@@ -345,10 +345,10 @@ namespace Solitaire
             if(start.first != 'P') {
                 start_upper =  slots[start.first][size2 - start.second]->get_upper();
             }
-            if(!is_king &&  slots[end].size() == 0) {
+            if(is_king == false &&  slots[end].size() == 0) {
                 throw Exception("only a King can be placed in an empty slot");
             }
-            else if(is_king && slots[end].size() == 0) {
+            else if(is_king == true && slots[end].size() == 0) {
                 return;
             }
             index = 0;
