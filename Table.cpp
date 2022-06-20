@@ -125,7 +125,7 @@ namespace Solitaire
             index++; 
         }
         for(int i = index; i < index + 3; i++) {
-            (pile[size - index - 1])->change_covered();
+            (pile[size - i - 1])->change_covered();
         }
 
     }
@@ -162,7 +162,9 @@ namespace Solitaire
                 moving_cards.push_back(( slots[start.first])[size - 1 - i]);
             }
              change_location(start, end, moving_cards);
-            ( slots[start.first])[size - 1]->change_covered();
+             if(size > 0) {
+                (slots[start.first])[size - 1]->change_covered();
+             }
         }
         
      }
