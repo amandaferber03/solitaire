@@ -175,7 +175,7 @@ namespace Solitaire
         std::string start_suit;
         bool is_king = false ;
         if (std::find(single_card_piles.begin(), single_card_piles.end(), start.first) != single_card_piles.end()) {//in the single card piles
-            if (end == 'P') {
+            if (start.first == 'P') {
                 for(int i = 0; i <  pile.size(); i++) {
                     if( pile[i]->is_covered() == false) {
                         index = i;
