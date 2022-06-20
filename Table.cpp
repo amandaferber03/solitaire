@@ -342,6 +342,9 @@ namespace Solitaire
             if(!is_king &&  slots[end].size() == 0) {
                 throw Exception("only a King can be placed in an empty slot");
             }
+            else if(is_king && slots[end].size() == 0) {
+                return;
+            }
             index = 0;
             for(int i = 0; i <  slots[end].size(); i++) {
                 if( slots[end][i]->is_covered() == false) {
