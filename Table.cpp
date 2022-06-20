@@ -119,13 +119,15 @@ namespace Solitaire
     }
 
     void Table::deal_new_cards() {
-        int size = pile.size();
         int index = 0; 
-        while((pile[size - index - 1])->is_covered() == false) {
+        while((pile[index])->is_covered() == false) {
             index++; 
         }
+        if(index != 0) {
+            index++;
+        }
         for(int i = index; i < index + 3; i++) {
-            (pile[size - i - 1])->change_covered();
+            (pile[i])->change_covered();
         }
 
     }
