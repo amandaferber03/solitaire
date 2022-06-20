@@ -263,7 +263,7 @@ namespace Solitaire
             }
             for(int i = 0; i <  slots[end].size(); i++) {
                 if( slots[end][i]->is_covered() == false) {
-                    end_lower =  slots[end][i]->get_lower();  
+                    end_lower =  slots[end][i]->to_ascii();  
                     if(end_lower != start_upper) {
                         throw Exception("improper order of card values");
                     }
