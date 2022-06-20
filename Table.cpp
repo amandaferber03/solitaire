@@ -121,7 +121,7 @@ namespace Solitaire
     void Table::deal_new_cards(int& begin) {
         if(begin == 1) {
             for(int i = 0; i < 24; i++ ) {
-                pile[0]->change_covered();
+                pile[i]->change_covered();
             }
             begin = 0; 
             return;
