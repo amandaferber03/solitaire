@@ -36,6 +36,8 @@ int main() {
   int deal_begin = 0;
 
   while(game_end == false) {
+
+    game.display();
     
     if(game.is_winner()) {
       std::cout << "congratulations! you're a winner" << std::endl;

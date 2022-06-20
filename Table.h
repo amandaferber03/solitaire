@@ -40,6 +40,8 @@ namespace Solitaire
         
         void erase_table();
 
+        void display(); 
+
         void deal_new_cards(int& deal_begin);
 
         bool is_winner();

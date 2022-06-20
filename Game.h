@@ -12,7 +12,7 @@ namespace Solitaire
   public:
     Game();
 
-    //void display() const { table.display(); }
+    void display() const { table.display(); }
 
     void is_valid_pos(const Position& start, const char& end);
     //A-G, P, d, h, c, s, and the second position identifier is not P
@@ -35,6 +35,7 @@ namespace Solitaire
     void deal_new_cards(int& deal_begin);
 
     bool is_winner();
+
 
   private:
     Table table;
