@@ -289,7 +289,13 @@ namespace Solitaire
         }
         if (std::find(single_card_piles.begin(), single_card_piles.end(), end) != single_card_piles.end()) {
             int size3 =  slots[end].size();
-            start_upper =  slots[start.first][size2 - start.second]->get_lower();
+            if(start.first != 'P') {
+                start_upper =  slots[start.first][size2 - start.second]->get_lower();
+            }
+            else {
+                start_upper = pile[index]->get_lower();
+            }
+            
             if(size3 == 0) {
                 end_lower = '?';
             }
