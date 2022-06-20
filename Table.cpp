@@ -212,6 +212,7 @@ namespace Solitaire
                 moving_cards.push_back(( slots[start.first])[size - 1 - i]);
             }
              change_location(start, end, moving_cards);
+             size = slots[start.first].size();
              if(size > 0) {
                 (slots[start.first])[size - 1]->change_covered();
              }
