@@ -205,18 +205,18 @@ namespace Solitaire
         }
         else {//in the general slots
             int size2 =  slots[start.first].size();
-            start_upper =  slots[start.first][size2 - start.second]->get_upper();
             start_red = ( slots[start.first])[size2 - start.second]->is_red();
             start_suit = ( slots[start.first])[size2 - start.second]->get_suit();
             is_king = 'K' == ( slots[start.first])[size2 - start.second]->to_ascii();
         }
         if (std::find(single_card_piles.begin(), single_card_piles.end(), end) != single_card_piles.end()) {
             int size3 =  slots[end].size();
+            start_upper =  slots[start.first][size2 - start.second]->get_lower();
             if(size3 == 0) {
                 end_lower = '2';
             }
             else {
-                end_lower = ( slots[end])[size3 - 1]->get_lower();
+                end_lower = ( slots[end])[size3 - 1]->to_ascii();
             }
             if(end_lower != start_upper) {
                 throw Exception("improper order of card values");
@@ -258,6 +258,7 @@ namespace Solitaire
             }
         }
         else {
+            start_upper =  slots[start.first][size2 - start.second]->get_upper();
             if(!is_king &&  slots[end].size() == 0) {
                 throw Exception("only a King can be placed in an empty slot");
             }
