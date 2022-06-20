@@ -32,7 +32,7 @@ namespace Solitaire
 
     void erase_table();
 
-    void deal_new_cards();
+    void deal_new_cards(int& deal_begin);
 
     bool is_winner();
 

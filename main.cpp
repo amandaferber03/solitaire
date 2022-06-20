@@ -33,7 +33,7 @@ int main() {
   Solitaire::Game game;
   show_commands();
   bool game_end = false;
-  int& deal_begin = 0;
+  int deal_begin = 0;
 
   while(game_end == false) {
     
