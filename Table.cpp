@@ -228,7 +228,7 @@ namespace Solitaire
                 start_upper =  slots[start.first][size2 - start.second]->get_lower();
             }
             if(size3 == 0) {
-                end_lower = '2';
+                end_lower = '?';
             }
             else {
                 end_lower = ( slots[end])[size3 - 1]->to_ascii();
