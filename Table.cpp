@@ -118,7 +118,14 @@ namespace Solitaire
         }
     }
 
-    void Table::deal_new_cards() {
+    void Table::deal_new_cards(int& begin) {
+        if(begin == 1) {
+            for(int i = 0; i < 24; i++ ) {
+                pile[0]->change_covered();
+            }
+            begin = 0; 
+            return;
+        }
         int index = 0; 
         while((pile[index])->is_covered() == false) {
             index++; 
@@ -127,7 +134,12 @@ namespace Solitaire
             index++;
         }
         for(int i = index; i < index + 3; i++) {
-            (pile[i])->change_covered();
+            if(i < pile.size()) {
+                (pile[i])->change_covered();
+            }
+        }
+        if(pile[pile.size() - 1]->is_covered() == false) {
+            begin = 1; 
         }
 
     }

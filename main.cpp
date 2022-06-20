@@ -33,6 +33,7 @@ int main() {
   Solitaire::Game game;
   show_commands();
   bool game_end = false;
+  int& deal_begin = 0;
 
   while(game_end == false) {
     
@@ -57,7 +58,7 @@ int main() {
 	      game_end = true;
 	      break;
       case 'N': case 'n':
-        game.deal_new_cards();
+        game.deal_new_cards(deal_begin);
         break;
       case 'M': case 'm': {
         std::string arg;
