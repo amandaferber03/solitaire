@@ -290,7 +290,7 @@ namespace Solitaire
             if(end_lower != start_upper) {
                 throw Exception("improper order of card values");
             }
-            if(start_red == ( slots[end])[i]->is_red()) {
+            if(start_red == ( slots[end])[index]->is_red()) {
                 throw Exception("colors do not alternate");
             }                  
         }
