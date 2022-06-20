@@ -260,7 +260,9 @@ namespace Solitaire
             }
         }
         else {
-            start_upper =  slots[start.first][size2 - start.second]->get_upper();
+            if(start.first != 'P') {
+                start_upper =  slots[start.first][size2 - start.second]->get_upper();
+            }
             if(!is_king &&  slots[end].size() == 0) {
                 throw Exception("only a King can be placed in an empty slot");
             }
