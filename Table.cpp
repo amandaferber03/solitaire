@@ -161,6 +161,7 @@ namespace Solitaire
                 }
             }
             moving_cards.push_back( pile[index]);
+            change_location(start, end, moving_cards);
         }
         else if (std::find(single_card_piles.begin(), single_card_piles.end(), start.first) != single_card_piles.end() && start.first != 'P') {
             int size =  slots[start.first].size();
