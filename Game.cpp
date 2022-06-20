@@ -17,8 +17,8 @@ namespace Solitaire {
         table.erase_table();
     }
     
-    void Game::deal_new_cards() {
-        table.deal_new_cards();
+    void Game::deal_new_cards(int& deal_begin) {
+        table.deal_new_cards(deal_begin);
 
     }
     

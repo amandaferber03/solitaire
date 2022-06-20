@@ -118,7 +118,7 @@ namespace Solitaire
         }
     }
 
-    void Table::deal_new_cards(int& begin) {
+    void Table::deal_new_cards(int& deal_begin) {
         if(begin == 1) {
             for(int i = 0; i < 24; i++ ) {
                 pile[0]->change_covered();
