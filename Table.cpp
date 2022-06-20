@@ -174,6 +174,7 @@ namespace Solitaire
         bool start_red;
         std::string start_suit;
         bool is_king = false ;
+        int size2 =  slots[start.first].size();
         if (std::find(single_card_piles.begin(), single_card_piles.end(), start.first) != single_card_piles.end()) {//in the single card piles
             if (start.first == 'P') {
                 for(int i = 0; i <  pile.size(); i++) {
@@ -204,7 +205,6 @@ namespace Solitaire
             }
         }
         else {//in the general slots
-            int size2 =  slots[start.first].size();
             start_red = ( slots[start.first])[size2 - start.second]->is_red();
             start_suit = ( slots[start.first])[size2 - start.second]->get_suit();
             is_king = 'K' == ( slots[start.first])[size2 - start.second]->to_ascii();
