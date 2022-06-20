@@ -152,37 +152,37 @@ namespace Solitaire
 
     void Table::display() {
         for(int i = 0; i < slots['A'].size(); i++){
-            if(slots['A'][i].is_covered() == false) {
+            if(slots['A'][i]->is_covered() == false) {
                 std::cout << "A: " << slots['A'][i]->to_ascii() << slots['A'][i]->get_suit() << std::endl;
             }
         }
         for(int i = 0; i < slots['B'].size(); i++){
-            if(slots['B'][i].is_covered() == false) {
+            if(slots['B'][i]->is_covered() == false) {
                 std::cout << "B: " << slots['B'][i]->to_ascii() << slots['B'][i]->get_suit() << std::endl;
             }
         }
         for(int i = 0; i < slots['C'].size(); i++){
-            if(slots['C'][i].is_covered() == false) {
+            if(slots['C'][i]->is_covered() == false) {
                 std::cout << "C: " << slots['C'][i]->to_ascii() << slots['C'][i]->get_suit() << std::endl;
             }
         }
         for(int i = 0; i < slots['D'].size(); i++){
-            if(slots['D'][i].is_covered() == false) {
+            if(slots['D'][i]->is_covered() == false) {
                 std::cout << "D: " << slots['D'][i]->to_ascii() << slots['D'][i]->get_suit() << std::endl;
             }
         }
         for(int i = 0; i < slots['E'].size(); i++){
-            if(slots['E'][i].is_covered() == false) {
+            if(slots['E'][i]->is_covered() == false) {
                 std::cout << "E: " << slots['E'][i]->to_ascii() << slots['E'][i]->get_suit() << std::endl;
             }
         }
         for(int i = 0; i < slots['F'].size(); i++){
-            if(slots['F'][i].is_covered() == false) {
+            if(slots['F'][i]->is_covered() == false) {
                 std::cout << "F: " << slots['F'][i]->to_ascii() << slots['F'][i]->get_suit() << std::endl;
             }
         }
         for(int i = 0; i < slots['G'].size(); i++){
-            if(slots['G'][i].is_covered() == false) {
+            if(slots['G'][i]->is_covered() == false) {
                 std::cout << "G: " << slots['G'][i]->to_ascii() << slots['G'][i]->get_suit() << std::endl;
             }
         }
