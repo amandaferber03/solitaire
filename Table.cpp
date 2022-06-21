@@ -238,7 +238,7 @@ namespace Solitaire
             }
              change_location(start, end, moving_cards);
              size = slots[start.first].size();
-             if(size > 0) {
+             if(size > 0 && (slots[start.first])[size - 1]->is_covered() == true) {
                 (slots[start.first])[size - 1]->change_covered();
              }
         }
