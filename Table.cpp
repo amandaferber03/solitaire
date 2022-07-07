@@ -151,6 +151,28 @@ namespace Solitaire
     }
 
     void Table::display() {
+        std::vector chars = {'A', 'B', 'C', 'D', 'E', 'F', 'G'};
+        std::string gen = "\u25AF";
+        for(int i = 0; i < 7; i++) {
+            for(int j = 0; j < 7; j++) {
+                Terminal::color_bg(Terminal::WHITE);
+                if(slots[chars[j]][i]->is_covered() == true) {
+                    std::cout << gen.c_str();
+                }
+                else {
+                    if(slots[chars[j]][i]->is_red() == true) {
+                        Terminal::color_fg(true, Terminal::RED);
+                    }
+                    else {
+                        Terminal::color_fg(true, Terminal::BLACK);
+                    }
+                    std::cout << slots[chars[j]][i]->to_unicode().c_str();
+                }
+                Terminal::set_default();
+                std::cout << "      ";
+            }
+            std::cout << endl;
+        }
         for(int i = 0; i < slots['A'].size(); i++){
             if(slots['A'][i]->is_covered() == false) {
                 std::cout << "A: " << slots['A'][i]->to_ascii() << slots['A'][i]->get_suit() << std::endl;
