@@ -161,6 +161,7 @@ namespace Solitaire
                 }
                 Terminal::color_bg(Terminal::WHITE);
                 if(slots[chars[j]][i]->is_covered() == true) {
+                    Terminal::color_fg(true, Terminal::MAGENTA);
                     std::cout << gen.c_str();
                 }
                 else {
