@@ -6,7 +6,7 @@ CFLAGS = $(CONSERVATIVE_FLAGS) $(DEBUGGING_FLAGS)
 solitaire: main.o Table.o Game.o CreateCard.o 
 	$(CC) -o solitaire main.o Table.o Game.o CreateCard.o
 
-Table.o: Table.cpp Card.h CreateCard.h Ace.h Two.h Three.h Four.h Five.h Six.h Seven.h Eight.h Nine.h Ten.h Jack.h Queen.h King.h
+Table.o: Table.cpp Card.h CreateCard.h Ace.h Two.h Three.h Four.h Five.h Six.h Seven.h Eight.h Nine.h Ten.h Jack.h Queen.h King.h Terminal.h
 	$(CC) -c Table.cpp $(CFLAGS)
 Game.o: Game.cpp Table.h Game.h Card.h
 	$(CC) -c Game.cpp $(CFLAGS)
