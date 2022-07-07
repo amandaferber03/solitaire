@@ -154,7 +154,14 @@ namespace Solitaire
         for(int i = 0; i < slots['A'].size(); i++){
             if(slots['A'][i]->is_covered() == false) {
                 std::cout << "A: " << slots['A'][i]->to_ascii() << slots['A'][i]->get_suit() << std::endl;
-                std::cout << slots['A'][i]->to_unicode().c_str();
+                if(slots['A'][i]->is_red() == true) {
+                    Terminal::color_fg(true, Terminal::RED);
+                }
+                else {
+                    Terminal::color_fg(true, Terminal::BLACK);
+                }
+                std::cout << slots['A'][i]->to_unicode().c_str() << std::endl;
+                Terminal::set_default();
             }
         }
         for(int i = 0; i < slots['B'].size(); i++){
