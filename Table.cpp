@@ -163,7 +163,7 @@ namespace Solitaire
                 }
                 std::cout << slots['A'][i]->to_unicode().c_str();
                 Terminal::set_default();
-                std::endl;
+                std::cout << std::endl;
             }
         }
         for(int i = 0; i < slots['B'].size(); i++){
