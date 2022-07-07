@@ -156,7 +156,7 @@ namespace Solitaire
         for(int i = 0; i < 7; i++) {
             for(int j = 0; j < 7; j++) {
                 if(i >= slots[chars[j]].size()) {
-                    std::cout << "      ";
+                    std::cout << "       ";
                     continue;
                 }
                 Terminal::color_bg(Terminal::WHITE);
