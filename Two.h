@@ -19,16 +19,16 @@ namespace Solitaire
 
     std::string to_unicode() const override {
       if(get_suit() == "hearts") {
-        return "\u1F0B2";
+        return "\U0001F0B2";
       }
       else if (get_suit() == "diamonds") {
-        return "\u1F0C2";
+        return "\U0001F0C2";
       }
       else if (get_suit() == "clubs") {
-        return "\u1F0A2";
+        return "\U0001F0D2";
       }
       else {
-        return"\u1F0D2";
+        return"\U0001F0A2";
       }
     }
       Two(std::string card_suit) :  Card(card_suit) {}
