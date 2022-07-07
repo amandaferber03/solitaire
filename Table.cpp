@@ -155,11 +155,11 @@ namespace Solitaire
         std::string gen = "\U0001F0A0";
         for(int i = 0; i < 7; i++) {
             for(int j = 0; j < 7; j++) {
-                Terminal::color_bg(Terminal::WHITE);
                 if(i >= slots[chars[j]].size()) {
                     std::cout << "      ";
                     continue;
                 }
+                Terminal::color_bg(Terminal::WHITE);
                 if(slots[chars[j]][i]->is_covered() == true) {
                     std::cout << gen.c_str();
                 }
