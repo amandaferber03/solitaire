@@ -1,7 +1,7 @@
 #include <iostream>
 #include <utility>
 #include <map>
-//#include "Terminal.h"
+#include "Terminal.h"
 #include <vector>
 #include "Table.h"
 #include "CreateCard.h"
