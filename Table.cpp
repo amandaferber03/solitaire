@@ -164,14 +164,14 @@ namespace Solitaire
                 continue;
             }
             if(slots[suit_identifiers[i - 3]].size() > 0) {
-                if(slots[suit_identifiers[i - 4]][slots[suit_identifiers[i - 4]].size() - 1]->is_red() == true) {
+                if(slots[suit_identifiers[i - 3]][slots[suit_identifiers[i - 3]].size() - 1]->is_red() == true) {
                     Terminal::color_fg(true, Terminal::RED);
                 }
                 else {
                     Terminal::color_fg(true, Terminal::BLACK);
                 }
-                std::cout << slots[suit_identifiers[i - 4]][slots[suit_identifiers[i - 4]].size() - 1]->to_ascii();
-                std::cout << get_string(slots[suit_identifiers[i - 4]][slots[suit_identifiers[i - 4]].size() - 1]->get_suit()).c_str();
+                std::cout << slots[suit_identifiers[i - 3]][slots[suit_identifiers[i - 3]].size() - 1]->to_ascii();
+                std::cout << get_string(slots[suit_identifiers[i - 3]][slots[suit_identifiers[i - 3]].size() - 1]->get_suit()).c_str();
                 Terminal::set_default();
             }
             else {
