@@ -242,7 +242,7 @@ namespace Solitaire
                 std::cout << slots[suit_identifiers[i]][last_indices[k]]->to_ascii() << slots[suit_identifiers[i]][last_indices[i]]->get_suit();
                 k++
             }
-            if(i > 0 && && k > 0 !has_cards[k-1]) {
+            if(i > 0 && k > 0 && !has_cards[k-1]) {
                 std::cout << "       ";
             }
         }
