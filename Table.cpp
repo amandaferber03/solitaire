@@ -165,7 +165,7 @@ namespace Solitaire
         Terminal::set_default();
         std::cout << "    ";
         std::vector<int> last_uncovered;
-        for(int i = pile.size() - 1; i > 0; i--) {
+        for(int i = pile.size() - 1; i >= 0; i--) {
             if(pile[i]->is_covered() == false) {
                 if(count == 3) {
                     break;
@@ -174,7 +174,7 @@ namespace Solitaire
                 count++;
             }
         }
-        for(int i = last_uncovered.size() - 1; i > 0; i--) {
+        for(int i = last_uncovered.size() - 1; i >= 0; i--) {
             Terminal::color_bg(Terminal::WHITE);
             if(pile[last_uncovered[i]]->is_red() == true) {
                 Terminal::color_fg(true, Terminal::RED);
