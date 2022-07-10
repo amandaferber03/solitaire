@@ -173,7 +173,7 @@ namespace Solitaire
                 std::cout << "  ";
             }
         }
-        for(int i = 0; i < 30 - (2 * count); i++) {
+        for(int i = 0; i < 28 - (2 * count); i++) {
             std::cout << " ";
         }
         std::vector<std::string> suit_icons = { "\u2665", "\u2666", "\u2663", "\u2660"};
@@ -226,7 +226,7 @@ namespace Solitaire
                 Terminal::set_default();
                 std::cout << "      ";
             }
-            std::cout << std::endl;
+            std::cout << std::endl << std::endl;
         }
         for(int i = 0; i < slots['A'].size(); i++){
             if(slots['A'][i]->is_covered() == false) {
