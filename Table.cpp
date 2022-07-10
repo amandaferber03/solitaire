@@ -222,10 +222,13 @@ namespace Solitaire
         }
         std::cout << "     ";
         for(int i = 0; i < 4; i++) {
+            if(i == 0) {
+                std::cout << "       ";
+            }
             if (has_cards[i]) {
                 std::cout << slots[suit_identifiers[i]][last_indices[i]]->to_ascii() << slots[suit_identifiers[i]][last_indices[i]]->get_suit();
             }
-            if( i > 0 && !has_cards[i-1]) {
+            if(i > 0 && !has_cards[i-1]) {
                 std::cout << "       ";
             }
         }
