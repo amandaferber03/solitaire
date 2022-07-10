@@ -134,7 +134,7 @@ namespace Solitaire
         if(index != 0) {
             for(int i = pile.size() - 1; i > 0; i--) {
                 if((pile[i])->is_covered() == false) {
-                    count++
+                    count++;
                 }
                 if(count == 3) {
                     first_uncovered = i;
