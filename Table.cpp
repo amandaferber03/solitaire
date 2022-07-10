@@ -280,74 +280,20 @@ namespace Solitaire
         }
         for(int i = 0; i < 7; i++) {
             if(i != -1) {
-                std::cout << slots[chars[i]][last_indices[i]]->to_ascii() << get_string(slots[chars[i]][last_indices[i]]->get_suit()).c_str();
+                std::cout << slots[chars[i]][last_indices[i]]->to_ascii();
+                if(slots[chars[i]][last_indices[i]]->is_red() == true) {
+                    Terminal::color_fg(true, Terminal::RED);
+                }
+                else {
+                    Terminal::color_fg(true, Terminal::BLACK);
+                }
+                std::cout << get_string(slots[chars[i]][last_indices[i]]->get_suit()).c_str();
+                Terminal::set_default();
             }
             else {
                 std::cout << "[empty]";
             }
             std::cout << "     ";
-        }
-        
-        for(int i = 0; i < slots['A'].size(); i++){
-            if(slots['A'][i]->is_covered() == false) {
-                std::cout << "A: " << slots['A'][i]->to_ascii() << slots['A'][i]->get_suit() << std::endl;
-            }
-        }
-        for(int i = 0; i < slots['B'].size(); i++){
-            if(slots['B'][i]->is_covered() == false) {
-                std::cout << "B: " << slots['B'][i]->to_ascii() << slots['B'][i]->get_suit() << std::endl;
-
-            }
-        }
-        for(int i = 0; i < slots['C'].size(); i++){
-            if(slots['C'][i]->is_covered() == false) {
-                std::cout << "C: " << slots['C'][i]->to_ascii() << slots['C'][i]->get_suit() << std::endl;
-            }
-        }
-        for(int i = 0; i < slots['D'].size(); i++){
-            if(slots['D'][i]->is_covered() == false) {
-                std::cout << "D: " << slots['D'][i]->to_ascii() << slots['D'][i]->get_suit() << std::endl;
-            }
-        }
-        for(int i = 0; i < slots['E'].size(); i++){
-            if(slots['E'][i]->is_covered() == false) {
-                std::cout << "E: " << slots['E'][i]->to_ascii() << slots['E'][i]->get_suit() << std::endl;
-            }
-        }
-        for(int i = 0; i < slots['F'].size(); i++){
-            if(slots['F'][i]->is_covered() == false) {
-                std::cout << "F: " << slots['F'][i]->to_ascii() << slots['F'][i]->get_suit() << std::endl;
-            }
-        }
-        for(int i = 0; i < slots['G'].size(); i++){
-            if(slots['G'][i]->is_covered() == false) {
-                std::cout << "G: " << slots['G'][i]->to_ascii() << slots['G'][i]->get_suit() << std::endl;
-            }
-        }
-        for(int i = 0; i < slots['h'].size(); i++){
-            if(slots['h'][i]->is_covered() == false) {
-                std::cout << "h: " << slots['h'][i]->to_ascii() << slots['h'][i]->get_suit() << std::endl;
-            }
-        }
-        for(int i = 0; i < slots['d'].size(); i++){
-            if(slots['d'][i]->is_covered() == false) {
-                std::cout << "d: " << slots['d'][i]->to_ascii() << slots['d'][i]->get_suit() << std::endl;
-            }
-        }
-        for(int i = 0; i < slots['c'].size(); i++){
-            if(slots['c'][i]->is_covered() == false) {
-                std::cout << "c: " << slots['c'][i]->to_ascii() << slots['c'][i]->get_suit() << std::endl;
-            }
-        }
-        for(int i = 0; i < slots['s'].size(); i++){
-            if(slots['s'][i]->is_covered() == false) {
-                std::cout << "s: " << slots['s'][i]->to_ascii() << slots['s'][i]->get_suit() << std::endl;
-            }
-        }
-        for(int i = 0; i < pile.size(); i++) {
-            if(pile[i]->is_covered() == false) {
-               std::cout << "Pile: " << pile[i]->to_ascii() << pile[i]->get_suit() << std::endl;
-            }
         }
     }
 
