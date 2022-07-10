@@ -151,8 +151,57 @@ namespace Solitaire
     }
 
     void Table::display() {
-        std::vector<char> chars = {'A', 'B', 'C', 'D', 'E', 'F', 'G'};
         std::string gen = "\U0001F0A0";
+        int count = 0; 
+        Terminal::color_bg(Terminal::WHITE);
+        Terminal::color_fg(true, Terminal::MAGENTA);
+        std::cout << gen.c_str();
+        Terminal::set_default();
+        std::cout << "    ";
+        for(int i = 0; i < pile.size(); i++) {
+            if(pile[i]->is_covered() == false) {
+                Terminal::color_bg(Terminal::WHITE);
+                if(pile[i]->is_red() == true) {
+                    Terminal::color_fg(true, Terminal::RED);
+                }
+                else {
+                    Terminal::color_fg(true, Terminal::BLACK);
+                }
+                std::cout << pile[i]->to_unicode().c_str();
+                count +=1;
+                Terminal::set_default();
+                std::cout << "  ";
+            }
+        }
+        for(int i = 0; i < 30 - (2 * count); i++) {
+            std::cout < " ";
+        }
+        std::vector<std::string> suit_icons = { "\u2665", "\u2666", "\u2663", "\u2660"};
+        std::vector<char> suit_identifiers = {'h', 'd', 'c', 's'};
+        int last_index = 0;
+        for(int i = 0; i < 4; i++) {
+            if(i < 2){
+                Terminal::color_fg(true, Terminal::RED);
+            }
+            else {
+                Terminal::color_fg(true, Terminal::BLACK);
+            }
+            if(slots[suit_identifiers[i]].empty() == true) {
+                std::cout << suit_icons[i].c_str();
+            }
+            else{
+                Terminal::color_bg(Terminal::WHITE);
+                for(int j = 0; j < slots[suit_identifiers[i]].size(); j++) {
+                    if(slots[suit_identifiers[i]][j]->is_covered() == false) {
+                        last_index = j;
+                    }
+                }
+                std::cout << slots[suit_identifiers[i]][last_index]->to_unicode().c_str(); 
+            }
+            Terminal::set_default();
+            std::cout << "  "; 
+        }
+        std::vector<char> chars = {'A', 'B', 'C', 'D', 'E', 'F', 'G'};
         for(int i = 0; i < 7; i++) {
             for(int j = 0; j < 7; j++) {
                 if(i >= slots[chars[j]].size()) {
