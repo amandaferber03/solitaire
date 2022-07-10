@@ -183,7 +183,8 @@ namespace Solitaire
         }
         std::vector<std::string> suit_icons = { "\u2665", "\u2666", "\u2663", "\u2660"};
         std::vector<char> suit_identifiers = {'h', 'd', 'c', 's'};
-        int last_index = 0;
+        std::vector<int> last_indices;
+        std::vector<bool> has_cards;
         for(int i = 0; i < 4; i++) {
             if(i < 2){
                 Terminal::color_fg(true, Terminal::RED);
@@ -193,15 +194,17 @@ namespace Solitaire
             }
             if(slots[suit_identifiers[i]].empty() == true) {
                 std::cout << suit_icons[i].c_str();
+                has_cards.push_back(false);
             }
             else{
+                has_cards.push_back(true);
                 Terminal::color_bg(Terminal::WHITE);
                 for(int j = 0; j < slots[suit_identifiers[i]].size(); j++) {
                     if(slots[suit_identifiers[i]][j]->is_covered() == false) {
-                        last_index = j;
+                        last_indices.push_back(j);
                     }
                 }
-                std::cout << slots[suit_identifiers[i]][last_index]->to_unicode().c_str(); 
+                std::cout << slots[suit_identifiers[i]][last_indices[i]]->to_unicode().c_str(); 
             }
             Terminal::set_default();
             std::cout << "      "; 
@@ -215,15 +218,12 @@ namespace Solitaire
             std::cout << pile[pile_index]->to_ascii() << pile[pile_index]->get_suit();
         }
         std::cout << "     ";
-        /*
-        if(has_hearts) {
-             
-            //print card
+        for(int i = 0; i < 4; i++) {
+            if (has_cards[i]) {
+                std::cout << slots[suit_identifiers[i]][last_indices[i]]->to_ascii() << slots[suit_identifiers[i]][last_indices[i]]->get_suit();
+            }
+            std::cout << "     ";
         }
-        if(has_diamonds) {
-
-        }
-        */
         std::cout << std::endl;
         std::cout << std::endl;
         std::vector<char> chars = {'A', 'B', 'C', 'D', 'E', 'F', 'G'};
