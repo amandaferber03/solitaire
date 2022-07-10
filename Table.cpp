@@ -208,9 +208,10 @@ namespace Solitaire
             else{
                 has_cards.push_back(true);
                 Terminal::color_bg(Terminal::WHITE);
-                for(int j = 0; j < slots[suit_identifiers[i]].size(); j++) {
+                for(int j = slots[suit_identifiers[i]].size() - 1; j >= 0; j--) {
                     if(slots[suit_identifiers[i]][j]->is_covered() == false) {
                         last_indices.push_back(j);
+                        break;
                     }
                 }
                 std::cout << slots[suit_identifiers[i]][last_indices[i]]->to_unicode().c_str(); 
