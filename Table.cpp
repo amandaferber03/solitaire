@@ -226,7 +226,9 @@ namespace Solitaire
                 Terminal::set_default();
                 std::cout << "      ";
             }
-            std::cout << std::endl << std::endl;
+            std::cout << std::endl;
+            std::cout << std::endl;
+            std::cout << std::endl;
         }
         for(int i = 0; i < slots['A'].size(); i++){
             if(slots['A'][i]->is_covered() == false) {
