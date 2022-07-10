@@ -31,7 +31,7 @@ void show_commands() {
 
 int main() {
   Solitaire::Game game;
-  show_commands();
+  //show_commands();
   bool game_end = false;
   int deal_begin = 0;
 
