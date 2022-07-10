@@ -129,8 +129,10 @@ namespace Solitaire
         while((pile[begin])->is_covered() == false) {
             begin++; 
         }
-        for(int i = begin - 1; i > begin - 4; i--) {
-            (pile[i])->change_covered();
+        if (begin > 0) {
+            for(int i = begin - 1; i > begin - 4; i--) {
+                (pile[i])->change_covered();
+            }
         }
         for(int i = begin; i < begin + 3; i++) {
             if(i < pile.size()) {
