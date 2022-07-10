@@ -204,7 +204,7 @@ namespace Solitaire
             std::cout << "      "; 
         }
         std::cout << std::endl;
-        std:cout << "Available card from pile: " << pile[pile_index]->to_ascii() << " of " << pile[pile_index]->get_suit();
+        std::cout << "Available card from pile: " << pile[pile_index]->to_ascii() << " of " << pile[pile_index]->get_suit();
         std::cout << std::endl;
         std::cout << std::endl;
         std::vector<char> chars = {'A', 'B', 'C', 'D', 'E', 'F', 'G'};
