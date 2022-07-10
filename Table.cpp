@@ -242,7 +242,7 @@ namespace Solitaire
                     std::cout << slots[chars[j]][slots[chars[j]].size() - 1]->to_ascii() << slots[chars[j]][slots[chars[j]].size() - 1]->get_suit();
                 }
                 if(i >= slots[chars[j]].size()) {
-                    std::cout << "              ";
+                    std::cout << "              ";//added 7 spaces
                     continue;
                 }
                 Terminal::color_bg(Terminal::WHITE);
