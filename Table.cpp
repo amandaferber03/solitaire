@@ -250,6 +250,10 @@ namespace Solitaire
         std::vector<char> chars = {'A', 'B', 'C', 'D', 'E', 'F', 'G'};
         last_indices.clear();
         for(int i = 0; i < 7; i++) {
+            std::cout << chars[i] << "      ";
+        }
+        std::endl;
+        for(int i = 0; i < 7; i++) {
             for(int j = 0; j < 7; j++) {
                 if(i >= slots[chars[j]].size()) {
                     if(i == 6 && slots[chars[j]].empty()) {
