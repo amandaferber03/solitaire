@@ -170,7 +170,7 @@ namespace Solitaire
                 std::cout << pile[i]->to_unicode().c_str();
                 count +=1;
                 Terminal::set_default();
-                std::cout << "  ";
+                std::cout << " ";
             }
         }
         for(int i = 0; i < 28 - (2 * count); i++) {
