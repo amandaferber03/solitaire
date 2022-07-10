@@ -167,7 +167,7 @@ namespace Solitaire
                     Terminal::color_fg(true, Terminal::RED);
                 }
                 else {
-                    Terminal::color_fg(true, Terminal::BLACK);
+                    Terminal::color_fg(true, Terminal::WHITE);
                 }
                 std::cout << slots[suit_identifiers[i - 3]][slots[suit_identifiers[i - 3]].size() - 1]->to_ascii();
                 std::cout << get_string(slots[suit_identifiers[i - 3]][slots[suit_identifiers[i - 3]].size() - 1]->get_suit()).c_str();
@@ -258,7 +258,7 @@ namespace Solitaire
                 Terminal::color_fg(true, Terminal::RED);
             }
             else {
-                Terminal::color_fg(true, Terminal::BLACK);
+                Terminal::color_fg(true, Terminal::WHITE);
             }
             std::cout << pile[pile_index]->to_ascii() << get_string(pile[pile_index]->get_suit()).c_str();
             Terminal::set_default();
@@ -292,7 +292,7 @@ namespace Solitaire
                     Terminal::color_fg(true, Terminal::RED);
                 }
                 else {
-                    Terminal::color_fg(true, Terminal::BLACK);
+                    Terminal::color_fg(true, Terminal::WHITE);
                 }
                 std::cout << slots[chars[i]][first_index]->to_ascii();
                 std::cout << get_string(slots[chars[i]][first_index]->get_suit()).c_str();
