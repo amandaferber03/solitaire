@@ -152,7 +152,20 @@ namespace Solitaire
         }
         return true;
     }
-
+    std::string Table::get_string(std::string suit) {
+        if(suit == "hearts") {
+            return "\u2665";
+        }
+        else if(suit == "diamonds") {
+            return "\u2666";
+        }
+        else if(suit == "clubs") {
+            return "\u2663";
+        }
+        else {
+            return "\u2660";
+        }
+    }
     void Table::display() {
         std::string gen = "\U0001F0A0";
         int count = 0; 
@@ -239,10 +252,10 @@ namespace Solitaire
         for(int i = 0; i < 7; i++) {
             for(int j = 0; j < 7; j++) {
                 if(i == slots[chars[j]].size()) {
-                    std::cout << slots[chars[j]][slots[chars[j]].size() - 1]->to_ascii() << slots[chars[j]][slots[chars[j]].size() - 1]->get_suit();
+                    std::cout << slots[chars[j]][slots[chars[j]].size() - 1]->to_ascii() << get_string(slots[chars[j]][slots[chars[j]].size() - 1]->get_suit()).c_str();
                 }
                 if(i >= slots[chars[j]].size()) {
-                    std::cout << "              ";//added 7 spaces
+                    std::cout << "       ";
                     continue;
                 }
                 Terminal::color_bg(Terminal::WHITE);
@@ -260,7 +273,7 @@ namespace Solitaire
                     std::cout << slots[chars[j]][i]->to_unicode().c_str();
                 }
                 Terminal::set_default();
-                std::cout << "             ";
+                std::cout << "      ";
             }
             std::cout << std::endl;
         }

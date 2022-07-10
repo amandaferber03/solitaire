@@ -41,6 +41,8 @@ namespace Solitaire
 
         void display(); 
 
+        std::string get_string(std::string suit);
+
         void deal_new_cards(int& deal_begin);
 
         bool is_winner();
