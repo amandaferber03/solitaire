@@ -273,12 +273,7 @@ namespace Solitaire
                     std::cout << slots[chars[j]][i]->to_unicode().c_str();
                 }
                 Terminal::set_default();
-                if(i == 0) {
-                    std::cout << "      ";
-                }
-                else {
-                   std::cout << "       "; 
-                }
+                    std::cout << "       ";
             }
             std::cout << std::endl;
         }
