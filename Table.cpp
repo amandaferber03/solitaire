@@ -295,6 +295,8 @@ namespace Solitaire
             }
             std::cout << "     ";
         }
+        std::cout << std::endl;
+        std::cout << std::endl;
     }
 
     void Table::make_move(const Position& start, const char& end) {
