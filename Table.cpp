@@ -245,12 +245,18 @@ namespace Solitaire
         std::cout << std::endl;
         std::cout << std::endl;
         std::vector<char> chars = {'A', 'B', 'C', 'D', 'E', 'F', 'G'};
+        int large_slot = 0;
+        for(int i = 0; i < 7; i++) {
+            if(slots[chars[i]].size() > large_slot) {
+                large_slot = slots[chars[i]].size();
+            }
+        }
         last_indices.clear();
         for(int i = 0; i < 7; i++) {
             std::cout << chars[i] << "      ";
         }
         std::cout << std::endl;
-        for(int i = 0; i < 7; i++) {
+        for(int i = 0; i < large_slot; i++) {
             for(int j = 0; j < 7; j++) {
                 if(i >= slots[chars[j]].size()) {
                     if(i == 6 && slots[chars[j]].empty()) {
