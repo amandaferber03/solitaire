@@ -238,9 +238,11 @@ namespace Solitaire
         last_indices.clear();
         for(int i = 0; i < 7; i++) {
             for(int j = 0; j < 7; j++) {
+                /*
                 if(i = slots[chars[j]].size()) {
                     std::cout << slots[chars[j]][slots[chars[j]].size() - 1]->to_ascii() << slots[chars[j]][slots[chars[j]].size() - 1]->get_suit();
                 }
+                */
                 if(i >= slots[chars[j]].size()) {
                     std::cout << "       ";
                     continue;
