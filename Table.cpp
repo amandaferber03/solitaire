@@ -276,6 +276,7 @@ namespace Solitaire
         for(int i = 0; i < 7; i++) {
             std::cout << chars[i] << "      ";
         }
+        std::cout << std::endl;
         for(int i = 0; i < 7; i++) {
             int first_index = -1; 
             for(int j = 0; j < slots[chars[i]].size(); j++) {
