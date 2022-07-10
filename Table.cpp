@@ -298,9 +298,8 @@ namespace Solitaire
                 std::cout << get_string(slots[chars[i]][first_index]->get_suit()).c_str();
                 Terminal::set_default();
             }
-            std::cout << "      ";
+            std::cout << "     ";
         }
-        std::cout << std::endl;
         for(int i = 0; i < large_slot; i++) {
             for(int j = 0; j < 7; j++) {
                 if(i >= slots[chars[j]].size()) {
