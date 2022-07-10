@@ -155,6 +155,7 @@ namespace Solitaire
         }
     }
     void Table::display() {
+        std::vector<char> suit_identifiers = {'h', 'd', 'c', 's'};
         std::cout << std::endl;
         for(int i = 0; i < 7; i++) {
             if (i < 3) {
@@ -219,7 +220,6 @@ namespace Solitaire
             std::cout << " ";
         }
         std::vector<std::string> suit_icons = { "\u2665", "\u2666", "\u2663", "\u2660"};
-        std::vector<char> suit_identifiers = {'h', 'd', 'c', 's'};
         std::vector<int> last_indices;
         int last_index = 0;
         std::vector<bool> has_cards;
