@@ -111,15 +111,15 @@ namespace Solitaire
     }
 
     void Table::deal_new_cards(int& begin) {
-        /*
         if(begin == 1) {
             for(int i = 0; i < pile.size(); i++ ) {
-                pile[i]->change_covered();
+                if((pile[i])->is_covered() == false) {
+                    pile[i]->change_covered();
+                }
             }
             begin = 0; 
             return;
         }
-        */
         int index = 0; 
         while((pile[index])->is_covered() == false) {
             index++; 
@@ -147,11 +147,9 @@ namespace Solitaire
                 }
             }
         }
-        /*
         if(pile[pile.size() - 1]->is_covered() == false) {
             begin = 1; 
         }
-        */
     }
     
     bool Table::is_winner() {
