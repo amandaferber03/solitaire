@@ -205,6 +205,10 @@ namespace Solitaire
         }
         std::cout << std::endl;
         if(count > 0) {
+            std::cout << "    ";
+            for(int i = 1; i < count; i++) {
+                std::cout << "  ";
+            }
             std::cout << pile[pile_index]->to_ascii() << pile[pile_index]->get_suit();
         }
         std::cout << std::endl;
