@@ -269,18 +269,6 @@ namespace Solitaire
         }
         std::cout << "     ";
         int k = 0;
-        for(int i = 0; i < 4; i++) {
-            if(i == 0) {
-                std::cout << "       ";
-            }
-            if (has_cards[i]) {
-                std::cout << slots[suit_identifiers[i]][last_indices[k]]->to_ascii() << slots[suit_identifiers[i]][last_indices[k]]->get_suit();
-                k++;
-            }
-            if(i > 0 && k > 0 && !has_cards[k-1]) {
-                std::cout << "       ";
-            }
-        }
         std::cout << std::endl;
         std::cout << std::endl;
         std::vector<char> chars = {'A', 'B', 'C', 'D', 'E', 'F', 'G'};
