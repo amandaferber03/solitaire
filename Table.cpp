@@ -113,9 +113,7 @@ namespace Solitaire
     void Table::deal_new_cards(int& begin) {
         if(begin == 1) {
             for(int i = 0; i < pile.size(); i++ ) {
-                if((pile[i])->is_covered() == false) {
-                    pile[i]->change_covered();
-                }
+                pile[i]->change_covered();
             }
             begin = 0; 
             return;
@@ -127,24 +125,6 @@ namespace Solitaire
         for(int i = index; i < index + 3; i++) {
             if(i < pile.size()) {
                 (pile[i])->change_covered();
-            }
-        }
-        int count = 0;
-        int first_uncovered = 0;
-        if(index != 0) {
-            for(int i = pile.size() - 1; i > 0; i--) {
-                if((pile[i])->is_covered() == false) {
-                    count++;
-                }
-                if(count == 3) {
-                    first_uncovered = i;
-                    break;
-                }
-            }
-            for(int i = first_uncovered - 1; i > 0; i--) {
-                if((pile[i])->is_covered() == false) {
-                    (pile[i])->change_covered();
-                }
             }
         }
         if(pile[pile.size() - 1]->is_covered() == false) {
@@ -184,20 +164,27 @@ namespace Solitaire
         std::cout << gen.c_str();
         Terminal::set_default();
         std::cout << "    ";
-        for(int i = 0; i < pile.size(); i++) {
+        std::vector<int> last_uncovered;
+        for(int i = pile.size() - 1; i > 0; i--) {
             if(pile[i]->is_covered() == false) {
-                Terminal::color_bg(Terminal::WHITE);
-                if(pile[i]->is_red() == true) {
-                    Terminal::color_fg(true, Terminal::RED);
+                if(count == 3) {
+                    break;
                 }
-                else {
-                    Terminal::color_fg(true, Terminal::BLACK);
-                }
-                std::cout << pile[i]->to_unicode().c_str();
-                pile_index = i;
-                count +=1;
-                Terminal::set_default();
-                std::cout << " ";
+                last_uncovered.push_back(i);
+                count++;
+        }
+        for(int i = last_uncovered.size() - 1; i > 0; i--) {
+            Terminal::color_bg(Terminal::WHITE);
+            if(pile[last_uncovered[i]]->is_red() == true) {
+                Terminal::color_fg(true, Terminal::RED);
+            }
+            else {
+                Terminal::color_fg(true, Terminal::BLACK);
+            }
+            std::cout << pile[last_uncovered[i]]->to_unicode().c_str();
+            pile_index = last_uncovered[i];
+            Terminal::set_default();
+            std::cout << " ";
             }
         }
         for(int i = 0; i < 16 - (2 * count); i++) {
