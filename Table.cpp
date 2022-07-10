@@ -174,7 +174,7 @@ namespace Solitaire
             }
         }
         for(int i = 0; i < 30 - (2 * count); i++) {
-            std::cout < " ";
+            std::cout << " ";
         }
         std::vector<std::string> suit_icons = { "\u2665", "\u2666", "\u2663", "\u2660"};
         std::vector<char> suit_identifiers = {'h', 'd', 'c', 's'};
