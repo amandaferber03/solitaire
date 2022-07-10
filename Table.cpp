@@ -283,7 +283,7 @@ namespace Solitaire
                 std::cout << slots[chars[i]][last_indices[i]]->to_ascii() << get_string(slots[chars[i]][last_indices[i]]->get_suit()).c_str();
             }
             else {
-                std::cout << "[empty]"
+                std::cout << "[empty]";
             }
             std::cout << "      ";
         }
