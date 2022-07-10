@@ -202,6 +202,8 @@ namespace Solitaire
             std::cout << "  "; 
         }
         std::cout << std::endl;
+        std::cout << std::endl;
+        std::cout << std::endl;
         std::vector<char> chars = {'A', 'B', 'C', 'D', 'E', 'F', 'G'};
         for(int i = 0; i < 7; i++) {
             for(int j = 0; j < 7; j++) {
@@ -226,8 +228,6 @@ namespace Solitaire
                 Terminal::set_default();
                 std::cout << "      ";
             }
-            std::cout << std::endl;
-            std::cout << std::endl;
             std::cout << std::endl;
         }
         for(int i = 0; i < slots['A'].size(); i++){
