@@ -159,11 +159,16 @@ namespace Solitaire
         std::string gen = "\U0001F0A0";
         int count = 0; 
         int pile_index = 0;
-        Terminal::color_bg(Terminal::WHITE);
-        Terminal::color_fg(true, Terminal::MAGENTA);
-        std::cout << gen.c_str();
-        Terminal::set_default();
-        std::cout << "    ";
+        if(!pile.empty()) {
+            Terminal::color_bg(Terminal::WHITE);
+            Terminal::color_fg(true, Terminal::MAGENTA);
+            std::cout << gen.c_str();
+            Terminal::set_default();
+            std::cout << "    ";
+        }
+        else {
+            std::cout << "     ";
+        }
         std::vector<int> last_uncovered;
         for(int i = pile.size() - 1; i >= 0; i--) {
             if(pile[i]->is_covered() == false) {
@@ -227,7 +232,14 @@ namespace Solitaire
             for(int i = 1; i < count; i++) {
                 std::cout << "  ";
             }
-            std::cout << pile[pile_index]->to_ascii() << pile[pile_index]->get_suit();
+            if(pile[pile_index]->is_red()) {
+                Terminal::color_fg(true, Terminal::RED);
+            }
+            else {
+                Terminal::color_fg(true, Terminal::BLACK);
+            }
+            std::cout << pile[pile_index]->to_ascii() << get_string(pile[pile_index]->get_suit()).c_str();
+            Terminal::set_default();
         }
         else {
             std::cout << "              ";
