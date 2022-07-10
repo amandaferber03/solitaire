@@ -264,12 +264,6 @@ namespace Solitaire
             std::cout << pile[pile_index]->to_ascii() << get_string(pile[pile_index]->get_suit()).c_str();
             Terminal::set_default();
         }
-        else {
-            std::cout << "              ";
-        }
-        std::cout << "     ";
-        int k = 0;
-        std::cout << std::endl;
         std::cout << std::endl;
         std::vector<char> chars = {'A', 'B', 'C', 'D', 'E', 'F', 'G'};
         int large_slot = 0;
@@ -282,7 +276,29 @@ namespace Solitaire
         for(int i = 0; i < 7; i++) {
             std::cout << chars[i] << "      ";
         }
-        std::cout << std::endl;
+        for(int i = 0; i < 7; i++) {
+            int first_index = -1; 
+            for(int j = 0; j < slots[chars[i]].size(); j++) {
+                if(slots[chars[i]][j]->is_covered() == false && j != slots[chars[i]].size() -1) {
+                    first_index = j;
+                }
+            }
+            if(first_index == -1) {
+                std::cout << "  ";
+            }
+            else {
+                if(slots[chars[i]][first_index]->is_red() == true) {
+                    Terminal::color_fg(true, Terminal::RED);
+                }
+                else {
+                    Terminal::color_fg(true, Terminal::BLACK);
+                }
+                std::cout << slots[chars[i]][first_index]->to_ascii();
+                std::cout << get_string(slots[chars[i]][first_index]->get_suit()).c_str();
+                Terminal::set_default();
+            }
+            std::cout << "     ";
+        }
         for(int i = 0; i < large_slot; i++) {
             for(int j = 0; j < 7; j++) {
                 if(i >= slots[chars[j]].size()) {
