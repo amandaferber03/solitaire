@@ -22,7 +22,6 @@ namespace Solitaire
         deck_model["diamonds"] = card_identifiers;
         deck_model["clubs"] = card_identifiers;
         deck_model["spades"]= card_identifiers;
-
         for(std::map<std::string, std::vector<char>>::iterator it = deck_model.begin(); 
             it != deck_model.end();
             it++) {
