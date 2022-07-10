@@ -133,7 +133,7 @@ namespace Solitaire
             index++; 
         }
         if(index > 0) {
-            for(int i = index -1; i < index - 4; i--) {
+            for(int i = index -1; i > index - 4; i--) {
                 (pile[i])->change_covered();
             }
         }
