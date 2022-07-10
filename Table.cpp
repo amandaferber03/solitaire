@@ -156,6 +156,29 @@ namespace Solitaire
     }
     void Table::display() {
         std::cout << std::endl;
+        for(int i = 0; i < 7; i++) {
+            if (i < 3) {
+                std::cout << "  ";
+                std::cout << "     ";
+                continue;
+            }
+            if(slots[suit_identifiers[i - 4]].size() > 0) {
+                if(slots[suit_identifiers[i - 4]][slots[suit_identifiers[i - 4]].size() - 1]->is_red() == true) {
+                    Terminal::color_fg(true, Terminal::RED);
+                }
+                else {
+                    Terminal::color_fg(true, Terminal::BLACK);
+                }
+                std::cout << slots[suit_identifiers[i - 4]][slots[suit_identifiers[i - 4]].size() - 1]->to_ascii();
+                std::cout << get_string(slots[suit_identifiers[i - 4]][slots[suit_identifiers[i - 4]].size() - 1]->get_suit()).c_str();
+                Terminal::set_default();
+            }
+            else {
+                std::cout << "  ";
+            }
+            std::cout << "     ";
+        }
+        std::cout << std::endl;
         std::string gen = "\U0001F0A0";
         int count = 0; 
         int pile_index = 0;
