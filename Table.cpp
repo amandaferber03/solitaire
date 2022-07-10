@@ -255,7 +255,7 @@ namespace Solitaire
                     std::cout << slots[chars[j]][slots[chars[j]].size() - 1]->to_ascii() << get_string(slots[chars[j]][slots[chars[j]].size() - 1]->get_suit()).c_str();
                 }
                 if(i >= slots[chars[j]].size()) {
-                    std::cout << "      ";
+                    std::cout << "       ";
                     continue;
                 }
                 Terminal::color_bg(Terminal::WHITE);
@@ -273,7 +273,12 @@ namespace Solitaire
                     std::cout << slots[chars[j]][i]->to_unicode().c_str();
                 }
                 Terminal::set_default();
-                std::cout << "      ";
+                if(i == 0) {
+                    std::cout << "      ";
+                }
+                else {
+                   std::cout << "       "; 
+                }
             }
             std::cout << std::endl;
         }
