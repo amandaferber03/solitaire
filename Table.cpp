@@ -280,13 +280,13 @@ namespace Solitaire
         }
         for(int i = 0; i < 7; i++) {
             if(i != -1) {
-                std::cout << slots[chars[i]][last_indices[i]]->to_ascii();
                 if(slots[chars[i]][last_indices[i]]->is_red() == true) {
                     Terminal::color_fg(true, Terminal::RED);
                 }
                 else {
                     Terminal::color_fg(true, Terminal::BLACK);
                 }
+                std::cout << slots[chars[i]][last_indices[i]]->to_ascii();
                 std::cout << get_string(slots[chars[i]][last_indices[i]]->get_suit()).c_str();
                 Terminal::set_default();
             }
