@@ -209,7 +209,6 @@ namespace Solitaire
             else{
                 has_cards.push_back(true);
                 Terminal::color_bg(Terminal::WHITE);
-                last_index = 0;
                 for(int j = slots[suit_identifiers[i]].size() - 1; j >= 0; j--) {
                     if(slots[suit_identifiers[i]][j]->is_covered() == false) {
                         last_indices.push_back(j);
@@ -234,14 +233,16 @@ namespace Solitaire
             std::cout << "              ";
         }
         std::cout << "     ";
+        int k = 0;
         for(int i = 0; i < 4; i++) {
             if(i == 0) {
                 std::cout << "       ";
             }
             if (has_cards[i]) {
-                std::cout << slots[suit_identifiers[i]][last_indices[i]]->to_ascii() << slots[suit_identifiers[i]][last_indices[i]]->get_suit();
+                std::cout << slots[suit_identifiers[i]][last_indices[k]]->to_ascii() << slots[suit_identifiers[i]][last_indices[i]]->get_suit();
+                k++
             }
-            if(i > 0 && !has_cards[i-1]) {
+            if(i > 0 && && k > 0 !has_cards[k-1]) {
                 std::cout << "       ";
             }
         }
