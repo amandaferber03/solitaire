@@ -193,6 +193,7 @@ namespace Solitaire
         std::vector<std::string> suit_icons = { "\u2665", "\u2666", "\u2663", "\u2660"};
         std::vector<char> suit_identifiers = {'h', 'd', 'c', 's'};
         std::vector<int> last_indices;
+        int last_index = 0;
         std::vector<bool> has_cards;
         for(int i = 0; i < 4; i++) {
             if(i < 2){
@@ -208,13 +209,15 @@ namespace Solitaire
             else{
                 has_cards.push_back(true);
                 Terminal::color_bg(Terminal::WHITE);
+                last_index = 0;
                 for(int j = slots[suit_identifiers[i]].size() - 1; j >= 0; j--) {
                     if(slots[suit_identifiers[i]][j]->is_covered() == false) {
                         last_indices.push_back(j);
+                        last_index = j;
                         break;
                     }
                 }
-                std::cout << slots[suit_identifiers[i]][last_indices[i]]->to_unicode().c_str(); 
+                std::cout << slots[suit_identifiers[i]][last_index]->to_unicode().c_str(); 
             }
             Terminal::set_default();
             std::cout << "      "; 
