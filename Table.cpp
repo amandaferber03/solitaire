@@ -281,6 +281,7 @@ namespace Solitaire
             for(int j = 0; j < slots[chars[i]].size(); j++) {
                 if(slots[chars[i]][j]->is_covered() == false && j != slots[chars[i]].size() - 1) {
                     first_index = j;
+                    break;
                 }
             }
             if(first_index == -1) {
