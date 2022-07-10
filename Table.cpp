@@ -285,7 +285,7 @@ namespace Solitaire
             else {
                 std::cout << "[empty]";
             }
-            std::cout << "      ";
+            std::cout << "    ";
         }
         
         for(int i = 0; i < slots['A'].size(); i++){
