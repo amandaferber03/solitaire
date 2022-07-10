@@ -251,11 +251,11 @@ namespace Solitaire
         last_indices.clear();
         for(int i = 0; i < 7; i++) {
             for(int j = 0; j < 7; j++) {
-                if(i == slots[chars[j]].size()) {
-                    std::cout << slots[chars[j]][slots[chars[j]].size() - 1]->to_ascii() << get_string(slots[chars[j]][slots[chars[j]].size() - 1]->get_suit()).c_str();
-                }
                 if(i >= slots[chars[j]].size()) {
-                    std::cout << "        ";
+                    if(i == 6 && slots[chars[j]].empty()) {
+                        last_indices.push_back(-1);
+                    }
+                    std::cout << "       ";
                     continue;
                 }
                 Terminal::color_bg(Terminal::WHITE);
@@ -264,6 +264,7 @@ namespace Solitaire
                     std::cout << gen.c_str();
                 }
                 else {
+                    last_indices.push_back(i); 
                     if(slots[chars[j]][i]->is_red() == true) {
                         Terminal::color_fg(true, Terminal::RED);
                     }
@@ -273,10 +274,20 @@ namespace Solitaire
                     std::cout << slots[chars[j]][i]->to_unicode().c_str();
                 }
                 Terminal::set_default();
-                    std::cout << "       ";
+                std::cout << "      ";
             }
             std::cout << std::endl;
         }
+        for(int i = 0; i < 7; i++) {
+            if(i != -1) {
+                std::cout << slots[chars[i]][last_indices[i]]->to_ascii() << get_string(slots[chars[i]][last_indices[i]]->get_suit()).c_str();
+            }
+            else {
+                std::cout << "[empty]"
+            }
+            std::cout << "      ";
+        }
+        
         for(int i = 0; i < slots['A'].size(); i++){
             if(slots['A'][i]->is_covered() == false) {
                 std::cout << "A: " << slots['A'][i]->to_ascii() << slots['A'][i]->get_suit() << std::endl;
