@@ -172,6 +172,7 @@ namespace Solitaire
                 }
                 last_uncovered.push_back(i);
                 count++;
+            }
         }
         for(int i = last_uncovered.size() - 1; i > 0; i--) {
             Terminal::color_bg(Terminal::WHITE);
@@ -185,7 +186,6 @@ namespace Solitaire
             pile_index = last_uncovered[i];
             Terminal::set_default();
             std::cout << " ";
-            }
         }
         for(int i = 0; i < 16 - (2 * count); i++) {
             std::cout << " ";
