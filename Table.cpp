@@ -153,6 +153,7 @@ namespace Solitaire
     void Table::display() {
         std::string gen = "\U0001F0A0";
         int count = 0; 
+        int pile_index = 0;
         Terminal::color_bg(Terminal::WHITE);
         Terminal::color_fg(true, Terminal::MAGENTA);
         std::cout << gen.c_str();
@@ -168,12 +169,13 @@ namespace Solitaire
                     Terminal::color_fg(true, Terminal::BLACK);
                 }
                 std::cout << pile[i]->to_unicode().c_str();
+                pile_index = i;
                 count +=1;
                 Terminal::set_default();
                 std::cout << " ";
             }
         }
-        for(int i = 0; i < 28 - (2 * count); i++) {
+        for(int i = 0; i < 16 - (2 * count); i++) {
             std::cout << " ";
         }
         std::vector<std::string> suit_icons = { "\u2665", "\u2666", "\u2663", "\u2660"};
@@ -199,9 +201,10 @@ namespace Solitaire
                 std::cout << slots[suit_identifiers[i]][last_index]->to_unicode().c_str(); 
             }
             Terminal::set_default();
-            std::cout << "  "; 
+            std::cout << "      "; 
         }
         std::cout << std::endl;
+        std:cout << "Available card from pile: " << pile[pile_index]->to_ascii() << " of " << pile[pile_index]->get_suit();
         std::cout << std::endl;
         std::cout << std::endl;
         std::vector<char> chars = {'A', 'B', 'C', 'D', 'E', 'F', 'G'};
