@@ -35,48 +35,40 @@ namespace Solitaire
         std::shuffle(deck.begin(), deck.end(), std::default_random_engine(seed));
         j = 0;
         slots['A'].push_back(create_card(deck[j].first, deck[j].second));
-        std::cout << "A: " << deck[j].first << deck[j].second << std::endl;
         j++;
         (slots['A'])[0]->change_covered();
         for(int i = 0; i < 2; i++) {
             slots['B'].push_back(create_card(deck[j].first, deck[j].second));
-            std::cout << "B: " << deck[j].first << deck[j].second << std::endl;
             j++;
         }
         (slots['B'])[1]->change_covered();
         for(int i = 0; i < 3; i++) {
             slots['C'].push_back(create_card(deck[j].first, deck[j].second));
-            std::cout << "C: " << deck[j].first << deck[j].second << std::endl;
             j++;
         }
         (slots['C'])[2]->change_covered();
         for(int i = 0; i < 4; i++) {
             slots['D'].push_back(create_card(deck[j].first, deck[j].second));
-            std::cout << "D: " << deck[j].first << deck[j].second << std::endl;
             j++;
         }
         (slots['D'])[3]->change_covered();    
         for(int i = 0; i < 5; i++) {
             slots['E'].push_back(create_card(deck[j].first, deck[j].second));
-            std::cout << "E: " << deck[j].first << deck[j].second << std::endl;
             j++;
         }
         (slots['E'])[4]->change_covered();
         for(int i = 0; i < 6; i++) {
             slots['F'].push_back(create_card(deck[j].first, deck[j].second));
-            std::cout << "F: " << deck[j].first << deck[j].second << std::endl;
             j++;
         }
         (slots['F'])[5]->change_covered();
         for(int i = 0; i < 7; i++) {
             slots['G'].push_back(create_card(deck[j].first, deck[j].second));
-            std::cout << "G: " << deck[j].first << deck[j].second << std::endl;
             j++;
         }
         (slots['G'])[6]->change_covered();
         for(int i = 0; i < 24; i++) {
             pile.push_back(create_card(deck[j].first, deck[j].second));
-            std::cout << "Pile: " << deck[j].first << deck[j].second << std::endl;
             j++;
         }
     }
@@ -167,6 +159,7 @@ namespace Solitaire
         }
     }
     void Table::display() {
+        std::cout << std::endl;
         std::string gen = "\U0001F0A0";
         int count = 0; 
         int pile_index = 0;
