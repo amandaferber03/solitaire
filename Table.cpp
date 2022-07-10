@@ -111,29 +111,47 @@ namespace Solitaire
     }
 
     void Table::deal_new_cards(int& begin) {
-        if(begin == -1) {
-            for(int i = pile.size() - 1; i > pile.size() - 4; i--) {
+        /*
+        if(begin == 1) {
+            for(int i = 0; i < pile.size(); i++ ) {
                 pile[i]->change_covered();
             }
             begin = 0; 
             return;
         }
-        while((pile[begin])->is_covered() == false) {
-            begin++; 
+        */
+        int index = 0; 
+        while((pile[index])->is_covered() == false) {
+            index++; 
         }
-        if (begin > 0) {
-            for(int i = begin - 1; i > begin - 4; i--) {
-                (pile[i])->change_covered();
-            }
-        }
-        for(int i = begin; i < begin + 3; i++) {
+        for(int i = index; i < index + 3; i++) {
             if(i < pile.size()) {
                 (pile[i])->change_covered();
             }
         }
-        if(pile[pile.size() - 1]->is_covered() == false) {
-            begin = -1; 
+        int count = 0;
+        int first_uncovered = 0;
+        if(index != 0) {
+            for(int i = pile.size() - 1; i > 0; i--) {
+                if((pile[i])->is_covered() == false) {
+                    count++
+                }
+                if(count == 3) {
+                    first_uncovered = i;
+                    break;
+                }
+            }
+            for(int i = first_uncovered - 1; i > 0; i--) {
+                if((pile[i])->is_covered() == false) {
+                    (pile[i])->change_covered();
+                }
+            }
         }
+        /*
+        if(pile[pile.size() - 1]->is_covered() == false) {
+            begin = 1; 
+        }
+        */
     }
     
     bool Table::is_winner() {
