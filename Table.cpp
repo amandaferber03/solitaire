@@ -250,7 +250,6 @@ namespace Solitaire
             for(int j = 0; j < 7; j++) {
                 if(i >= slots[chars[j]].size()) {
                     if(i == 6 && slots[chars[j]].empty()) {
-                        last_indices.push_back(-1);
                     }
                     std::cout << "       ";
                     continue;
@@ -261,7 +260,6 @@ namespace Solitaire
                     std::cout << gen.c_str();
                 }
                 else {
-                    last_indices.push_back(i); 
                     if(slots[chars[j]][i]->is_red() == true) {
                         Terminal::color_fg(true, Terminal::RED);
                     }
@@ -276,19 +274,19 @@ namespace Solitaire
             std::cout << std::endl;
         }
         for(int i = 0; i < 7; i++) {
-            if(i != -1) {
-                if(slots[chars[i]][last_indices[i]]->is_red() == true) {
+            if(slots[chars[i]].size() > 0) {
+                if(slots[chars[i]][slots[chars[i]].size() - 1]->is_red() == true) {
                     Terminal::color_fg(true, Terminal::RED);
                 }
                 else {
                     Terminal::color_fg(true, Terminal::BLACK);
                 }
-                std::cout << slots[chars[i]][last_indices[i]]->to_ascii();
-                std::cout << get_string(slots[chars[i]][last_indices[i]]->get_suit()).c_str();
+                std::cout << slots[chars[i]][slots[chars[i]].size() - 1]->to_ascii();
+                std::cout << get_string(slots[chars[i]][slots[chars[i]].size() - 1]->get_suit()).c_str();
                 Terminal::set_default();
             }
             else {
-                std::cout << "[empty]";
+                std::cout << "NA";
             }
             std::cout << "     ";
         }
