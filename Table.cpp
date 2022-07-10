@@ -280,7 +280,7 @@ namespace Solitaire
         for(int i = 0; i < 7; i++) {
             int first_index = -1; 
             for(int j = 0; j < slots[chars[i]].size(); j++) {
-                if(slots[chars[i]][j]->is_covered() == false && j != slots[chars[i]].size() -1) {
+                if(slots[chars[i]][j]->is_covered() == false && j != slots[chars[i]].size() - 1) {
                     first_index = j;
                 }
             }
@@ -298,7 +298,7 @@ namespace Solitaire
                 std::cout << get_string(slots[chars[i]][first_index]->get_suit()).c_str();
                 Terminal::set_default();
             }
-            std::cout << "       ";
+            std::cout << "      ";
         }
         std::cout << std::endl;
         for(int i = 0; i < large_slot; i++) {
