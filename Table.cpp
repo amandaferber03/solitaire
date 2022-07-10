@@ -218,7 +218,7 @@ namespace Solitaire
             std::cout << pile[pile_index]->to_ascii() << pile[pile_index]->get_suit();
         }
         else {
-            std::cout << "                  ";
+            std::cout << "              ";
         }
         std::cout << "     ";
         for(int i = 0; i < 4; i++) {
