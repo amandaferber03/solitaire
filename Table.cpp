@@ -220,6 +220,16 @@ namespace Solitaire
             }
             std::cout << pile[pile_index]->to_ascii() << pile[pile_index]->get_suit();
         }
+        std::cout << "     ";
+        /*
+        if(has_hearts) {
+             
+            //print card
+        }
+        if(has_diamonds) {
+
+        }
+        */
         std::cout << std::endl;
         std::cout << std::endl;
         std::vector<char> chars = {'A', 'B', 'C', 'D', 'E', 'F', 'G'};
