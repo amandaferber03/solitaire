@@ -36,15 +36,15 @@ namespace Solitaire
             if(i < 7) {
                 for(int j = 0; j < i + 1; j++) {
                     slots[chars[i]].push_back(create_card(deck[k].first, deck[k].second));
-                    k++;
                     if(j == i) {
                         (slots[chars[i]])[i]->change_covered();
                     }
                 }
             }
             else {
-                pile.push_back(create_card(deck[i-7].first, deck[i-7].second));
+                pile.push_back(create_card(deck[k].first, deck[k].second));
             }
+            k++;
         }
         /*
         j = 0;
