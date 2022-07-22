@@ -209,6 +209,7 @@ namespace Solitaire
             else{
                 has_cards.push_back(true);
                 Terminal::color_bg(Terminal::WHITE);
+                //getting last index
                 for(int j = slots[suit_identifiers[i]].size() - 1; j >= 0; j--) {
                     if(slots[suit_identifiers[i]][j]->is_covered() == false) {
                         last_indices.push_back(j);
@@ -244,7 +245,8 @@ namespace Solitaire
         }
         std::cout << std::endl;
         for(int i = 0; i < 7; i++) {
-            int first_index = -1; 
+            int first_index = -1;
+            //getting first index
             for(int j = 0; j < slots[chars[i]].size(); j++) {
                 if(slots[chars[i]][j]->is_covered() == false && j != slots[chars[i]].size() - 1) {
                     first_index = j;
@@ -334,8 +336,8 @@ namespace Solitaire
      }
 
     void Table::is_valid_order(const Position& start, const char& end) {
-        char start_upper;
-        char end_lower;
+        char  start_rule;
+        char end_rule;
         int index = -1;
         bool start_red;
         std::string start_suit;
@@ -351,7 +353,7 @@ namespace Solitaire
                 if(index == -1) {
                     throw Exception("no cards available to be moved from deck");
                 }
-                start_upper =  pile[index]->get_upper();
+                start_rule =  pile[index]->get_upper();
                 start_red =  pile[index]->is_red();
                 start_suit =  pile[index]->get_suit();
                 is_king = 'K' ==  pile[index]->to_ascii();
@@ -364,7 +366,7 @@ namespace Solitaire
                 if(( slots[start.first])[size - 1]->is_covered()) {
                     throw Exception("cannot move covered card(s)");
                 }
-                start_upper = ( slots[start.first])[size - 1]->get_upper();
+                start_rule = ( slots[start.first])[size - 1]->get_upper();
                 start_red = ( slots[start.first])[size - 1]->is_red();
                 start_suit = ( slots[start.first])[size - 1]->get_suit();
                 is_king = 'K' == ( slots[start.first])[size - 1]->to_ascii();
@@ -378,19 +380,19 @@ namespace Solitaire
         if (std::find(single_card_piles.begin(), single_card_piles.end(), end) != single_card_piles.end()) {
             int size3 =  slots[end].size();
             if(start.first != 'P') {
-                start_upper =  slots[start.first][size2 - start.second]->get_lower();
+                start_rule =  slots[start.first][size2 - start.second]->get_lower();
             }
             else {
-                start_upper = pile[index]->get_lower();
+                start_rule = pile[index]->get_lower();
             }
             
             if(size3 == 0) {
-                end_lower = '?';
+                end_rule = '?';
             }
             else {
-                end_lower = ( slots[end])[size3 - 1]->to_ascii();
+                end_rule = ( slots[end])[size3 - 1]->to_ascii();
             }
-            if(end_lower != start_upper) {
+            if(end_rule !=  start_rule) {
                 throw Exception("improper order of card values");
             }
             if(size3 > 0 && start_suit != ( slots[end])[size3 - 1]->get_suit()) {
@@ -431,7 +433,7 @@ namespace Solitaire
         }
         else {
             if(start.first != 'P') {
-                start_upper =  slots[start.first][size2 - start.second]->get_upper();
+                 start_rule =  slots[start.first][size2 - start.second]->get_upper();
             }
             if(is_king == false &&  slots[end].size() == 0) {
                 throw Exception("only a King can be placed in an empty slot");
@@ -445,8 +447,8 @@ namespace Solitaire
                     index = i; 
                 }
             }
-            end_lower =  slots[end][index]->to_ascii();  
-            if(end_lower != start_upper) {
+            end_rule =  slots[end][index]->to_ascii();  
+            if(end_rule !=  start_rule) {
                 throw Exception("improper order of card values");
             }
             if(start_red == ( slots[end])[index]->is_red()) {
