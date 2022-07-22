@@ -15,7 +15,7 @@
 namespace Solitaire
 {
     void Table::create_deck() {
-        //int j = 0;
+        int j = 0;
         std::map<std::string, std::vector<char>> deck_model;
         deck_model["hearts"] = card_identifiers;
         deck_model["diamonds"] = card_identifiers;
