@@ -35,7 +35,7 @@ namespace Solitaire
         for(int i = 0; i < 7; i++) {
             for(int j = 0; j < i; j++) {
                 slots[chars[i]].push_back(create_card(deck[k].first, deck[j].second));
-                k++
+                k++;
                 if(j == i) {
                     (slots[chars[i]])[i]->change_covered();
                 }
