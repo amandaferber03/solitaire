@@ -32,13 +32,18 @@ namespace Solitaire
         unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
         std::shuffle(deck.begin(), deck.end(), std::default_random_engine(seed));
         k = 0; 
-        for(int i = 0; i < 7; i++) {
-            for(int j = 0; j < i + 1; j++) {
-                slots[chars[i]].push_back(create_card(deck[k].first, deck[k].second));
-                k++;
-                if(j == i) {
-                    (slots[chars[i]])[i]->change_covered();
+        for(int i = 0; i < 52; i++) {
+            if(i < 7) {
+                for(int j = 0; j < i + 1; j++) {
+                    slots[chars[i]].push_back(create_card(deck[k].first, deck[k].second));
+                    k++;
+                    if(j == i) {
+                        (slots[chars[i]])[i]->change_covered();
+                    }
                 }
+            }
+            else {
+                pile.push_back(create_card(deck[i-7].first, deck[i-7].second));
             }
         }
         /*
