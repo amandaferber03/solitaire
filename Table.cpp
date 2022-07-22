@@ -36,6 +36,7 @@ namespace Solitaire
             if(i < 7) {
                 for(int j = 0; j < i + 1; j++) {
                     slots[chars[i]].push_back(create_card(deck[k].first, deck[k].second));
+                    k++;
                     if(j == i) {
                         (slots[chars[i]])[i]->change_covered();
                     }
@@ -43,8 +44,8 @@ namespace Solitaire
             }
             else {
                 pile.push_back(create_card(deck[k].first, deck[k].second));
+                k++;
             }
-            k++;
         }
         /*
         j = 0;
