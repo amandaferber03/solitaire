@@ -15,7 +15,7 @@
 namespace Solitaire
 {
     void Table::create_deck() {
-        int j = 0;
+        int k = 0;
         std::map<std::string, std::vector<char>> deck_model;
         deck_model["hearts"] = card_identifiers;
         deck_model["diamonds"] = card_identifiers;
@@ -25,16 +25,16 @@ namespace Solitaire
             it != deck_model.end();
             it++) {
                 for(int i = 0; i < 13; i++) {
-                    deck[j] = std::make_pair(it->second[i], it->first);
-                    j++;
+                    deck[k] = std::make_pair(it->second[i], it->first);
+                    k++;
                 }
             }
         unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
         std::shuffle(deck.begin(), deck.end(), std::default_random_engine(seed));
-        int k = 0; 
+        k = 0; 
         for(int i = 0; i < 7; i++) {
-            for(int j = 0; j < i; j++) {
-                slots[chars[i]].push_back(create_card(deck[k].first, deck[j].second));
+            for(int j = 0; j < i + 1; j++) {
+                slots[chars[i]].push_back(create_card(deck[k].first, deck[k].second));
                 k++;
                 if(j == i) {
                     (slots[chars[i]])[i]->change_covered();
