@@ -30,6 +30,10 @@ namespace Solitaire
             slot_identifiers = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'P', 'd', 'h', 'c', 's'};
             single_card_piles = {'P', 'd', 'h', 'c', 's'};
             valid_numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
+            card_identifiers = {'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2', 'A'};
+            suit_identifiers = {'h', 'd', 'c', 's'};
+            suit_icons = { "\u2665", "\u2666", "\u2663", "\u2660"};
+            chars = {'A', 'B', 'C', 'D', 'E', 'F', 'G'};
         }
 
 
@@ -59,8 +63,10 @@ namespace Solitaire
         std::vector<char> slot_identifiers;
         std::vector<char> single_card_piles;
         std::vector<int> valid_numbers;
-
-
+        std::vector<char> card_identifiers;
+        std::vector<char> suit_identifiers;
+        std::vector<std::string> suit_icons;
+        std::vector<char> chars;
     };
 }
 #endif

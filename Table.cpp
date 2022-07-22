@@ -16,7 +16,6 @@ namespace Solitaire
 {
     void Table::create_deck() {
         int j = 0;
-        std::vector<char> card_identifiers{'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2', 'A'};
         std::map<std::string, std::vector<char>> deck_model;
         deck_model["hearts"] = card_identifiers;
         deck_model["diamonds"] = card_identifiers;
@@ -32,6 +31,16 @@ namespace Solitaire
             }
         unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
         std::shuffle(deck.begin(), deck.end(), std::default_random_engine(seed));
+        k = 0; 
+        for(int i = 0; i < 7; i++) {
+            for(int j = 0; j < i; j++) {
+                slots[chars[i]].push_back(create_card(deck[k].first, deck[j].second));
+                k++
+                if(j == i) {
+                    (slots[chars[i]])[i]->change_covered();
+            }
+        }
+        /*
         j = 0;
         slots['A'].push_back(create_card(deck[j].first, deck[j].second));
         j++;
@@ -70,6 +79,7 @@ namespace Solitaire
             pile.push_back(create_card(deck[j].first, deck[j].second));
             j++;
         }
+        */
     }
     void Table::change_location(const Position& start, const char& end, std::vector<Card*> moving_cards) {
         if(start.first == 'P') {
@@ -154,7 +164,6 @@ namespace Solitaire
         }
     }
     void Table::display() {
-        std::vector<char> suit_identifiers = {'h', 'd', 'c', 's'};
         std::cout << std::endl;
         for(int i = 0; i < 7; i++) {
             if (i < 3) {
@@ -218,7 +227,6 @@ namespace Solitaire
         for(int i = 0; i < 16 - (2 * count); i++) {
             std::cout << " ";
         }
-        std::vector<std::string> suit_icons = { "\u2665", "\u2666", "\u2663", "\u2660"};
         std::vector<int> last_indices;
         int last_index = 0;
         std::vector<bool> has_cards;
@@ -264,7 +272,6 @@ namespace Solitaire
             Terminal::set_default();
         }
         std::cout << std::endl;
-        std::vector<char> chars = {'A', 'B', 'C', 'D', 'E', 'F', 'G'};
         int large_slot = 0;
         for(int i = 0; i < 7; i++) {
             if(slots[chars[i]].size() > large_slot) {
