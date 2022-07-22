@@ -227,7 +227,7 @@ namespace Solitaire
             for(int i = 1; i < count; i++) {
                 std::cout << "  ";
             }
-            change_foreground(pile[pile_index]->is_red(), 'B');
+            change_foreground(pile[pile_index]->is_red(), 'W');
             std::cout << pile[pile_index]->to_ascii() << get_string(pile[pile_index]->get_suit()).c_str();
             Terminal::set_default();
         }
