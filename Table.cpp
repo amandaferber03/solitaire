@@ -131,12 +131,15 @@ namespace Solitaire
         }
     }
 
-    void Table::change_foreground(bool red) {
+    void Table::change_foreground(bool red, char color) {
         if(red) {
             Terminal::color_fg(true, Terminal::RED);
         }
-        else {
+        else if(color == 'B') {
             Terminal::color_fg(true, Terminal::BLACK);
+        }
+        else {
+            Terminal::color_fg(true, Terminal::WHITE);
         }
     }
 
@@ -149,12 +152,7 @@ namespace Solitaire
                 continue;
             }
             if(slots[suit_identifiers[i - 3]].size() > 0) {
-                if(slots[suit_identifiers[i - 3]][slots[suit_identifiers[i - 3]].size() - 1]->is_red() == true) {
-                    Terminal::color_fg(true, Terminal::RED);
-                }
-                else {
-                    Terminal::color_fg(true, Terminal::WHITE);
-                }
+                change_foreground(slots[suit_identifiers[i - 3]][slots[suit_identifiers[i - 3]].size() - 1]->is_red(), 'W');
                 std::cout << slots[suit_identifiers[i - 3]][slots[suit_identifiers[i - 3]].size() - 1]->to_ascii();
                 std::cout << get_string(slots[suit_identifiers[i - 3]][slots[suit_identifiers[i - 3]].size() - 1]->get_suit()).c_str();
                 Terminal::set_default();
@@ -190,15 +188,7 @@ namespace Solitaire
         }
         for(int i = last_uncovered.size() - 1; i >= 0; i--) {
             Terminal::color_bg(Terminal::WHITE);
-            change_foreground(pile[last_uncovered[i]]->is_red());
-            /*
-            if(pile[last_uncovered[i]]->is_red() == true) {
-                Terminal::color_fg(true, Terminal::RED);
-            }
-            else {
-                Terminal::color_fg(true, Terminal::BLACK);
-            }
-            */
+            change_foreground(pile[last_uncovered[i]]->is_red(), 'B');
             std::cout << pile[last_uncovered[i]]->to_unicode().c_str();
             pile_index = last_uncovered[i];
             Terminal::set_default();
@@ -211,12 +201,7 @@ namespace Solitaire
         int last_index = 0;
         std::vector<bool> has_cards;
         for(int i = 0; i < 4; i++) {
-            if(i < 2){
-                Terminal::color_fg(true, Terminal::RED);
-            }
-            else {
-                Terminal::color_fg(true, Terminal::BLACK);
-            }
+            change_foreground(i < 2, 'B');
             if(slots[suit_identifiers[i]].empty() == true) {
                 std::cout << suit_icons[i].c_str();
                 has_cards.push_back(false);
@@ -242,12 +227,7 @@ namespace Solitaire
             for(int i = 1; i < count; i++) {
                 std::cout << "  ";
             }
-            if(pile[pile_index]->is_red()) {
-                Terminal::color_fg(true, Terminal::RED);
-            }
-            else {
-                Terminal::color_fg(true, Terminal::WHITE);
-            }
+            change_foreground(pile[pile_index]->is_red(), 'B');
             std::cout << pile[pile_index]->to_ascii() << get_string(pile[pile_index]->get_suit()).c_str();
             Terminal::set_default();
         }
@@ -275,12 +255,7 @@ namespace Solitaire
                 std::cout << "  ";
             }
             else {
-                if(slots[chars[i]][first_index]->is_red() == true) {
-                    Terminal::color_fg(true, Terminal::RED);
-                }
-                else {
-                    Terminal::color_fg(true, Terminal::WHITE);
-                }
+                change_foreground(slots[chars[i]][first_index]->is_red(), 'W');
                 std::cout << slots[chars[i]][first_index]->to_ascii();
                 std::cout << get_string(slots[chars[i]][first_index]->get_suit()).c_str();
                 Terminal::set_default();
@@ -302,12 +277,7 @@ namespace Solitaire
                     std::cout << gen.c_str();
                 }
                 else {
-                    if(slots[chars[j]][i]->is_red() == true) {
-                        Terminal::color_fg(true, Terminal::RED);
-                    }
-                    else {
-                        Terminal::color_fg(true, Terminal::BLACK);
-                    }
+                    change_foreground(slots[chars[j]][i]->is_red(), 'B');
                     std::cout << slots[chars[j]][i]->to_unicode().c_str();
                 }
                 Terminal::set_default();
@@ -317,12 +287,7 @@ namespace Solitaire
         }
         for(int i = 0; i < 7; i++) {
             if(slots[chars[i]].size() > 0) {
-                if(slots[chars[i]][slots[chars[i]].size() - 1]->is_red() == true) {
-                    Terminal::color_fg(true, Terminal::RED);
-                }
-                else {
-                    Terminal::color_fg(true, Terminal::WHITE);
-                }
+                change_foreground(slots[chars[i]][slots[chars[i]].size() - 1]->is_red(), 'W');
                 std::cout << slots[chars[i]][slots[chars[i]].size() - 1]->to_ascii();
                 std::cout << get_string(slots[chars[i]][slots[chars[i]].size() - 1]->get_suit()).c_str();
                 Terminal::set_default();
