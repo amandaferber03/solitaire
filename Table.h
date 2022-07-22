@@ -54,6 +54,8 @@ namespace Solitaire
         void make_move(const Position& start, const char& end);
 
         void is_valid_order(const Position& start, const char& end);
+
+        void change_foreground(bool red);
         
         private:
         

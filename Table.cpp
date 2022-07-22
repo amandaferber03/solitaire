@@ -47,46 +47,6 @@ namespace Solitaire
                 k++;
             }
         }
-        /*
-        j = 0;
-        slots['A'].push_back(create_card(deck[j].first, deck[j].second));
-        j++;
-        (slots['A'])[0]->change_covered();
-        for(int i = 0; i < 2; i++) {
-            slots['B'].push_back(create_card(deck[j].first, deck[j].second));
-            j++;
-        }
-        (slots['B'])[1]->change_covered();
-        for(int i = 0; i < 3; i++) {
-            slots['C'].push_back(create_card(deck[j].first, deck[j].second));
-            j++;
-        }
-        (slots['C'])[2]->change_covered();
-        for(int i = 0; i < 4; i++) {
-            slots['D'].push_back(create_card(deck[j].first, deck[j].second));
-            j++;
-        }
-        (slots['D'])[3]->change_covered();    
-        for(int i = 0; i < 5; i++) {
-            slots['E'].push_back(create_card(deck[j].first, deck[j].second));
-            j++;
-        }
-        (slots['E'])[4]->change_covered();
-        for(int i = 0; i < 6; i++) {
-            slots['F'].push_back(create_card(deck[j].first, deck[j].second));
-            j++;
-        }
-        (slots['F'])[5]->change_covered();
-        for(int i = 0; i < 7; i++) {
-            slots['G'].push_back(create_card(deck[j].first, deck[j].second));
-            j++;
-        }
-        (slots['G'])[6]->change_covered();
-        for(int i = 0; i < 24; i++) {
-            pile.push_back(create_card(deck[j].first, deck[j].second));
-            j++;
-        }
-        */
     }
     void Table::change_location(const Position& start, const char& end, std::vector<Card*> moving_cards) {
         if(start.first == 'P') {
@@ -170,6 +130,16 @@ namespace Solitaire
             return "\u2660";
         }
     }
+
+    void Table::change_foreground(bool red) {
+        if(red) {
+            Terminal::color_fg(true, Terminal::RED);
+        }
+        else {
+            Terminal::color_fg(true, Terminal::BLACK);
+        }
+    }
+
     void Table::display() {
         std::cout << std::endl;
         for(int i = 0; i < 7; i++) {
@@ -220,12 +190,15 @@ namespace Solitaire
         }
         for(int i = last_uncovered.size() - 1; i >= 0; i--) {
             Terminal::color_bg(Terminal::WHITE);
+            change_foreground(pile[last_uncovered[i]]->is_red());
+            /*
             if(pile[last_uncovered[i]]->is_red() == true) {
                 Terminal::color_fg(true, Terminal::RED);
             }
             else {
                 Terminal::color_fg(true, Terminal::BLACK);
             }
+            */
             std::cout << pile[last_uncovered[i]]->to_unicode().c_str();
             pile_index = last_uncovered[i];
             Terminal::set_default();
