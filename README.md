@@ -1,1 +1,1 @@
-# This repository generates a fully-functional solitaire game using the command-line interface with basic UI on the Linux terminal.
+# This repository generates a fully-functional solitaire game using the command-line interface with basic UI on the Linux terminal. This project was completed independently outside of university coursework. 
